@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
   <!-- styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="app.js">
+  
   
 </head>
 
@@ -21,8 +21,12 @@
       <div class="underline"></div>
     </div>
     <!-- filter buttons -->
+    <button type="button" class="filter-btn" data-id="all" onclick="display(menu)" >all</button>
+    <button type="button" class="filter-btn" data-id="all" onclick="ascending()" >Asc-Order</button>
+    <button type="button" class="filter-btn" data-id="all" onclick="dscending()" >Dsc-Order</button>
+
     <div class="btn-container" id="btn">
-      <button type="button" class="filter-btn" data-id="all">all</button>
+      
       <button type="button" class="filter-btn" data-id="breakfast">
         breakfast
       </button>
@@ -89,6 +93,7 @@
   </section>
   <!-- javascript -->
   <script src="app.js"></script>
+  
 </body>
 
 </html>

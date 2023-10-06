@@ -85,11 +85,11 @@ const menu = [
 
 
 
-const display = () => {
+const display = (data) => {
 
- 
 
-  let displayHtml = menu.map((v) => {
+
+  let displayHtml = data.map((v) => {
 
 
     return (`<article class="menu-item">
@@ -102,22 +102,19 @@ const display = () => {
         <p class="item-text">${v.desc}</p>
       </div>
     </article>`)
-})
-
-  let category = menu.map((p) => {
-    return(` <button type="button" class="filter-btn" data-id="all">${p.category}</button>`)
   })
 
-  let outPut = category.reduce((pre,curr,index) => {
-    if(!pre.includes(curr))
-    {
+  let category = menu.map((p) => {
+    return (`<button type="button" class="filter-btn" data-id="breakfast" onclick="filterData('${p.category}')">${p.category}</button>`)
+  })
+
+  let outPut = category.reduce((pre, curr, index) => {
+    if (!pre.includes(curr)) {
       pre.push(curr)
     }
     return pre;
 
-  },[])
-  console.log(outPut);
-  
+  }, [])
 
   document.getElementById("btn").innerHTML = outPut.join(" ");
 
@@ -125,4 +122,51 @@ const display = () => {
 
 }
 
-display();
+
+display(menu);
+
+filterData = (category) => {
+
+  const filterData = menu.filter((v) => {
+    return v.category === category;
+  })
+
+  display(filterData);
+}
+
+ascending = () => {
+
+    const ascending = menu.sort((a, b) => {
+
+      if (a.price > b.price) {
+         return 1
+      }
+      else {
+        return -1;
+      }
+    })
+
+    display(ascending);
+  }
+
+  dscending = () => {
+
+    const dscending = menu.sort((a,b) => {
+
+      if(a.price < b.price)
+      {
+        return 1
+      }
+      else{
+        return -1
+      }
+    })
+    display(dscending);
+  }
+
+
+
+
+
+
+

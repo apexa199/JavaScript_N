@@ -130,11 +130,12 @@ const display = () => {
 `})
 
 
-  let outPut = products.map((a) => {
+  let company = products.map((a) => {
 
-    return`<button class="company-btn" onclick="filterCompany('${a.company}')">${a.company}</button>`
+    return`<button type="button" class="company-btn" data-id ="Ikea"  onclick="filterCompany('${a.company}')">${a.company}</button>`
 
-  }).reduce((v,c,index) => {
+  })
+  let outPut = company.reduce((v,c) => {
 
     if(!v.includes(c))
     {
@@ -148,13 +149,13 @@ document.getElementById("companies").innerHTML = outPut.join("")
 document.getElementById("products").innerHTML = value.join("");
 }
 
-filterCompany = (s) => {
+filterCompany = (company) => {
 
-  let filterValue = s.filter((b) => {
+  const filterCompany = products.filter((b) => {
     return b.company === company;
   })
   
-  display(filterValue);
+  display(filterCompany);
 }
 
 

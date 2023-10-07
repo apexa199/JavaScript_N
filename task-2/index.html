@@ -17,14 +17,14 @@
       <div class="filters-container">
         <!-- search -->
         <form class="input-form">
-          <input type="text" class="search-input" placeholder="search..." id="searchTerm" onchange="filterProduct()"/>
+          <input type="text" class="search-input" placeholder="search..." id="searchTerm" />
         </form>
         <!-- categories -->
         <h5>Company</h5>
         <article class="companies" id="companies">
-          <button class="company-btn">all</button>
-          <button class="company-btn">ikea</button>
-          <button class="company-btn">marcos</button>
+          <button type="button" class="company-btn" data-id ="all">all</button>
+          <button type="button" class="company-btn" data-id="Ikea">Ikea</button>
+          <button type="button" class="company-btn" data-id="marcos">marcos</button>
         </article>
       </div>
       <!-- products -->
@@ -46,19 +46,7 @@
        
       </div>
     </section>
-    <script src="products.js">
-      filterProduct = () => {
-
-let filterData = document.getElementById("searchTerm").value
-let outPut = products.filter((a) => {
-
-return a.title.includes(filterData);
-})
-
-display(outPut);
-}
-
-    </script>
+    <script src="products.js"></script>
     
   </body>
 </html>

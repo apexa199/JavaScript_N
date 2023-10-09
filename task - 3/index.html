@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
+
+    <table id="menu"></table>
+
+    <script>
+
+        fetch("https://jsonplaceholder.typicode.com/photos")
+        .then(y=>y.json())
+        .then(y=> { 
+            console.log(y);
+            display(y);
+        })
+
+
+        display = (data) => {
+
+            const valueDisplay = data.map((v) => {
     
+                return `<tr><td>${v.albumId}</td>
+                        <td>${v.id}</td><td>${v.title}</td><td><img src="${v.url}" />
+                        </td><td><img src="${v.thumbnailUrl}"/></td></tr>`
+            })
+            document.getElementById("menu").innerHTML = valueDisplay;
+        }
+
+        
+    </script>
+
 </body>
+
 </html>

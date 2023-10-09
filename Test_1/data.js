@@ -151,15 +151,15 @@ const data = [
   }
 ]
 
-const display = (x) => {
+display = (x) => {
 
-  let outPut = x.map((v) => {
+  const outPut = x.map((v) => {
     return (`<div class="col-md-4">
           <div class="card">
             <div class="card-header bg-dark d-sm-flex justify-content-sm-between align-items-sm-center">
               <div class=" card-title">
                 <a href="${v.logo}" style="color:white" class="display-inline-   block" onmouseover="this.style.color='#00e6ac'" onmouseout="this.style.color='#fff'">
-                  <strong>Job Title</strong>
+                  <strong>${v.position}</strong>
                 </a>
               </div>
             </div>
@@ -177,10 +177,13 @@ const display = (x) => {
   document.getElementById("myProducts").innerHTML = outPut.join("");
 }
 
+
 filterData = () => {
-const input = document.getElementById("myFilter").ariaValueMax;
+
+const input = document.getElementById("myFilter").value;
+
   const filterData = data.filter((v) => {
-    return v.position.includes(input);
+    return v.role.includes(input);
   })
 
   display(filterData);
@@ -188,11 +191,11 @@ const input = document.getElementById("myFilter").ariaValueMax;
 
 display(data);
 
-ascending = () => {
+sortData = () => {
 
   const ascending = data.sort((a, b) => {
 
-    if (a.company > b.company) {
+    if (a.company.length > b.company.length) {
        return 1
     }
     else {
@@ -203,17 +206,4 @@ ascending = () => {
   display(ascending);
 }
 
-dscending = () => {
 
-  const dscending = data.sort((a,b) => {
-
-    if(a.company < b.company)
-    {
-      return 1
-    }
-    else{
-      return -1
-    }
-  })
-  display(dscending);
-}

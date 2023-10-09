@@ -117,8 +117,8 @@ const products = [
 
 
 
-const display = () => {
-  let value = products.map((v) => {
+ display = () => {
+  const value = products.map((v) => {
     return`<article class="product">
     <img src="${v.image}" class="product-img img"/>
     <footer>
@@ -151,12 +151,10 @@ document.getElementById("products").innerHTML = value.join("");
 
 filterCompany = (company) => {
 
-  const filterCompany = products.filter((b) => {
-    return b.company === company;
+  const filterData = products.filter((v) => {
+    return v.company === company;
   })
-  
-  display(filterCompany);
+  display(filterData);
 }
-
 
 display(products);

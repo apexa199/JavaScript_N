@@ -12,13 +12,14 @@
     
 
 </head>
-<body onchange="display()">
+<body>
 
     <div class="container">
         <div class="row">
           <div class="col-sm-4 mb-4">
-            <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for card name..." onclick="filterCompany()">
+            <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for card name..." onclick="filterData()">
           </div>
+          <button id="company-btn"style="padding: 5px; height: fit-content" onclick="sortData()">Sort Data</button>
         </div>
       
         <div class="row" id="myProducts">
@@ -91,5 +92,7 @@
           <!-- /transparent header, white footer -->
         </div>
       </div>
+
+      <script src="data.js"></script>
 </body>
 </html>

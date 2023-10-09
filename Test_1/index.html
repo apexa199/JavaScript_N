@@ -6,8 +6,7 @@
     <title>Document</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet"/>
-  
-    <link rel="stylesheet" href="data.js">
+
 
     
 
@@ -17,7 +16,7 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-4 mb-4">
-            <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for card name..." onclick="filterData()">
+            <input type="text" id="myFilter" class="form-control" onkeyup="myFunction(event)" placeholder="Search for card name..." >
           </div>
           <button id="company-btn"style="padding: 5px; height: fit-content" onclick="sortData()">Sort Data</button>
         </div>

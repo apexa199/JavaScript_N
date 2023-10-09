@@ -117,54 +117,64 @@ const products = [
 
 
 
- display = () => {
-  const value = products.map((v) => {
+ display = (data) => {
+
+  const value = data.map((v) => {
     return`<article class="product">
     <img src="${v.image}" class="product-img img"/>
     <footer>
       <h5 class="product-name">${v.title}</h5>
-      <h5>${v.company}</h5>
+    
       <span class="product-price">${v.price}</span>
     </footer>
   </article>
 `})
 
 
-  let company = products.map((a) => {
+  let button = company.map((a) => {
 
-    return`<button type="button" class="company-btn" data-id ="Ikea"  onclick="filterCompany('${a.company}')">${a.company}</button>`
+    return`<button type="button" class="company-btn"   onclick="filterCompany('${a}')">${a}</button>`
 
   })
-  let outPut = company.reduce((v,c) => {
+  let company = products.map((v) => {
+
+    return v.company;
+
+  }).reduce((v,c) => {
 
     if(!v.includes(c))
     {
       v.push(c)
     }
     return v;
+
   },[])
 
-document.getElementById("companies").innerHTML = outPut.join("")
+document.getElementById("companies").innerHTML = button.join("")
 
 document.getElementById("products").innerHTML = value.join("");
 }
+display(products);
 
-filterCompany = (e) => {
+
+filterCompany = (company) => {
 
   const filterData = products.filter((v) => {
-    return v.company.includes(e.target.value);
+    return v.company === company
   })
+
   display(filterData);
     
 }
 
-myFunction = (e) => {
-  let searchTerm = document.getElementById("searchTerm").value;
-  products.filter((v) => {
-    return v.title.includes(e.target.value)
+myFunction = () => {
+  const  searchName = document.getElementById("searchTerm").value;
+
+  const searchCompany = products.filter((v) => {
+
+    return v.company.includes(searchName);
   })
   
-  display(searchTerm);
+  display(searchCompany);
 }
 
-display(products);

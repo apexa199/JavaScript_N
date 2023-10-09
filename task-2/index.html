@@ -17,11 +17,11 @@
       <div class="filters-container">
         <!-- search -->
         <form class="input-form">
-          <input type="text" class="search-input" placeholder="search..." id="searchTerm" onkeypress="myFunction(e)"/>
+          <input type="text" class="search-input" placeholder="search..." id="searchTerm"  onchange="searchCompany()"/>
         </form>
         <!-- categories -->
         <h5>Company</h5>
-        <article class="companies" id="companies">
+        <article class="companies" id="companies" onload="display()">
           <button type="button" class="company-btn" data-id ="all">all</button>
           <button type="button" class="company-btn" data-id="Ikea">Ikea</button>
           <button type="button" class="company-btn" data-id="marcos">marcos</button>

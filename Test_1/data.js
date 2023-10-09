@@ -151,9 +151,10 @@ const data = [
   }
 ]
 
-display = (x) => {
+display = () => {
 
-  const outPut = x.map((v) => {
+  const displayData = data.map((v) => {
+
     return (`<div class="col-md-4">
           <div class="card">
             <div class="card-header bg-dark d-sm-flex justify-content-sm-between align-items-sm-center">
@@ -172,30 +173,29 @@ display = (x) => {
             </div>
           </div>
         </div>`)
-  },[])
-
-  document.getElementById("myProducts").innerHTML = outPut.join("");
-}
-
-
-filterData = () => {
-
-const input = document.getElementById("myFilter").value;
-
-  const filterData = data.filter((v) => {
-    return v.role.includes(input);
   })
 
-  display(filterData);
+  document.getElementById("myProducts").innerHTML = displayData.join("");
+}
+display();
+
+
+myFunction = (e) => {
+
+const filterData = data.filter((a) => {
+
+  return a.position.includes(e.target.value);
+})
+
+display(filterData);
 }
 
-display(data);
 
 sortData = () => {
 
   const ascending = data.sort((a, b) => {
 
-    if (a.company.length > b.company.length) {
+    if (a.company > b.company ) {
        return 1
     }
     else {

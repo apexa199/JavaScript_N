@@ -85,11 +85,11 @@ const menu = [
 
 
 
-const display = (data) => {
+ display = (data) => {
 
 
 
-  let displayHtml = data.map((v) => {
+  const displayHtml = data.map((v) => {
 
 
     return (`<article class="menu-item">

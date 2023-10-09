@@ -152,9 +152,19 @@ document.getElementById("products").innerHTML = value.join("");
 filterCompany = (e) => {
 
   const filterData = products.filter((v) => {
-    return v.
+    return v.company.includes(e.target.value);
   })
   display(filterData);
+    
+}
+
+myFunction = (e) => {
+  let searchTerm = document.getElementById("searchTerm").value;
+  products.filter((v) => {
+    return v.title.includes(e.target.value)
+  })
+  
+  display(searchTerm);
 }
 
 display(products);

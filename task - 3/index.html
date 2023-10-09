@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,th,td{
+            border: 2px solid, black;
+        }
+        th,td{
+            padding: 15px;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
     
 </head>
 <body>
@@ -16,20 +28,20 @@
         fetch("https://jsonplaceholder.typicode.com/photos")
         .then(y=>y.json())
         .then(y=> { 
-            console.log(y);
+        
             display(y);
         })
 
 
         display = (data) => {
 
-            const valueDisplay = data.map((v) => {
-    
+            let valueDisplay = data.map((v) => {
+                    if(v.id <= 20){
                 return `<tr><td>${v.albumId}</td>
                         <td>${v.id}</td><td>${v.title}</td><td><img src="${v.url}" />
-                        </td><td><img src="${v.thumbnailUrl}"/></td></tr>`
+                        </td><td><img src="${v.thumbnailUrl}"/></td></tr>`}
             })
-            document.getElementById("menu").innerHTML = valueDisplay;
+            document.getElementById("menu").innerHTML = valueDisplay.join("");
         }
 
         

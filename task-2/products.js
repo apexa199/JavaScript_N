@@ -149,10 +149,10 @@ document.getElementById("companies").innerHTML = outPut.join("")
 document.getElementById("products").innerHTML = value.join("");
 }
 
-filterCompany = (company) => {
+filterCompany = (e) => {
 
   const filterData = products.filter((v) => {
-    return v.company === company;
+    return v.
   })
   display(filterData);
 }

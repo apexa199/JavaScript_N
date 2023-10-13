@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="addproduct(event)">
+
+        <input type="text"id="Model"/>
+        <input type="text"id="rating"/>
+        <input type="text"id="year"/>
+        <input type="text"id="Company"/>
+        <input type="submit"value="save"/>
+    
+    </form>
+    <script>
+
+       const addproduct = (e) => {
+
+            // e.preventDefault();
+
+            let myproduct = {};
+
+            let Product = document.querySelectorAll("input").forEach((v)=>{
+                
+                if(v.type !== 'submit')
+                {
+
+                myproduct[v.id] = v.value;
+                }
+
+
+            })
+
+            fetch("https://65276509917d673fd76da263.mockapi.io/Product",{
+            
+                method : "POST",
+                body : JSON.stringify(myproduct),
+                headers : {
+                    "Content-Type" : "application/json" 
+                }
+            
+            })
+            .then(y=>y.json())
+            .then(y=>{
+
+                console.log(y)
+            })
+
+        }
+        addproduct();
+    </script>
+    
+</body>
+</html>

@@ -16,7 +16,7 @@
 
 <body>
 
-    <div id="display"></div>
+    <div class="raw" id="display"></div>
 
     <script>
 
@@ -32,16 +32,15 @@
 
             let displayHtml = data.map((v) => 
             {
-                return `<div class="card" style="width: 18rem; id ="container">
-                    <div id="box">
+                return `<div class="col-4"><div class="card" style="width: 18rem; id ="container">
                         <img src="${v.image}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">${v.title}</h5>
                         <p class="card-text">${v.description}</p>
                         <p class="card-text">price : <b>${v.price}</b></p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
                         </div>
-                    </div>
+    
                 </div>`
                 
             })

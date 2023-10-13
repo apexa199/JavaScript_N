@@ -18,12 +18,17 @@
 
     <script>
 
-        fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/volleyball")
+        fetchDataFromApi = () => {
 
-            .then(y => y.json())
-            .then(y => {
-                displayData(y)
-            })
+            fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products")
+
+                .then(y => y.json())
+                .then(y => {
+                    displayData(y)
+                })
+
+        }
+        fetchDataFromApi();
 
         displayData = (data) => {
 
@@ -31,10 +36,11 @@
 
                 return `<tr>
                         <td class="table-primary">${v.name}</td>
-                        <td class="table-secondary">${v.player}</td>
-                        <td class="table-success">${v.image}</td>
-            
+                        <td class="table-secondary">${v.title}</td>
+                        <td class="table-success">${v.description}</td>
+                        <td class="table-success">${v.price}</td>
                         <td class="table-warning">${v.rating}</td>
+                        <td class="table-success">${v.categary}</td>
                         <td class="table-dark"><button onclick="deleteUsers(${v.id})">Delete</button></td>
                         </tr>`
             })
@@ -44,11 +50,14 @@
 
         const deleteUsers = (id) => {
 
-            fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/volleyball/${id}`,{
-                method:"DELETE"
+            fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/products/${id}`, {
+                method: "DELETE"
             }).then(y => y.json())
-            .then(y => 
-            console.log(y))
+                .then(y =>
+
+                console.log(y))
+
+                fetchDataFromApi()
         }
     </script>
 

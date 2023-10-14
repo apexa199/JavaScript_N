@@ -124,7 +124,6 @@ const products = [
     <img src="${v.image}" class="product-img img"/>
     <footer>
       <h5 class="product-name">${v.title}</h5>
-    
       <span class="product-price">${v.price}</span>
     </footer>
   </article>
@@ -154,6 +153,7 @@ document.getElementById("companies").innerHTML = button.join("")
 
 document.getElementById("products").innerHTML = value.join("");
 }
+
 display(products);
 
 

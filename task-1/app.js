@@ -127,11 +127,11 @@ display(menu);
 
 filterData = (category) => {
 
-  const filterData = menu.filter((v) => {
+  const filterValue = menu.filter((v) => {
     return v.category === category;
   })
 
-  display(filterData);
+  display(filterValue);
 }
 
 ascending = () => {

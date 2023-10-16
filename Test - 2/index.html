@@ -15,10 +15,10 @@
 
 <body onload="fetchProduct()">
 
-    <input type="text" id="input" style="margin: 20px;">
-    <button onclick="filterP()">search</button>
-    <button onclick="Ascending()">Asc</button>
-    <button onclick="Decending()">Dcs</button>
+    <input type="text" id="input" style="margin: 21px;" onkeypress="filterP()" placeholder="Search">
+    
+    <button onclick="ascending()">Price low to high</button>
+    <button onclick="decending()">Price high to low</button>
     <div class="row" id="display">
        
     </div>
@@ -30,7 +30,9 @@
             fetch(`https://api.escuelajs.co/api/v1/products`)
                 .then(y => y.json())
                 .then(y => {
+                    dataStore = y;
                     displayData(y);
+                 
                 })
         }
 
@@ -39,7 +41,7 @@
             let displayHtml = data.map((v) => {
 
                 return(`<div class= "col-3">
-                <div class="card" style="width: 23rem; margin:10px">
+                <div class="card" style="width: 28rem; margin:10px">
                     
                     <img src="${v.category.image}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -55,22 +57,24 @@
             })
             document.getElementById("display").innerHTML = displayHtml.join("");   
             
-        }
         
+        let dataStore = "";
 
-        filterP = (y) => {
+        filterP = (data) => {
 
             const filterCart = document.getElementById("input").value;
 
-            const filterData = menu.filter((v) => {
+            const filterData = data.filter((v) => {
 
                 return v.category.includes(filterCart);
             })
+
+            displayData(filterData)
         }
 
-        Ascending = () => {
+        ascending = () => {
 
-            const ascending = viv.sort((a,b) => {
+            dataStore.sort((a,b) => {
 
                 if(a.price > b.price)
                 {
@@ -81,11 +85,12 @@
                     return -1
                 }
             })
-            displayData(ascending);
+            displayData(dataStore);
         }
-        Decending = () => {
 
-            const decending = displayHtml.sort((a,b) => {
+        decending = () => {
+
+            dataStore.sort((a,b) => {
 
                 if(a.price > b.price)
                 {
@@ -96,8 +101,9 @@
                     return 1
                 }
             })
-            displayData(decending);
+            displayData(decendingValue);
         }
+    }
 
     </script>
 </body>

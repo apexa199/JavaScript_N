@@ -39,7 +39,7 @@
             let displayHtml = data.map((v,index) => 
             {
                 return (`<div class = "col-3">
-                    <div class="card" style="width: 23rem; id ="container">
+                    <div class="card" style="width: 29rem; id ="container">
                         <img src="${v.image }" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">${v.title}</h5>
@@ -56,10 +56,27 @@
 
         const addProduct = (myindex) =>
         {
-            carts.push(Products[myindex]);
+            const selectedProduct = Products[myindex];
+            const findProduct = carts.find((v) => {
 
-            console.log(carts);
-            document.getElementById("mycart").innerHTML = carts.length;
+                return v.item.id = selectedProduct.id
+            })
+
+            if(!findProduct)
+            {
+                carts.push({item:selectedProduct, count :1});
+            }
+            else
+            {
+                findProduct.count = findProduct.count + 1;
+            }
+        
+            let p = carts.reduce((pre ,curr) => {
+
+                return pre + curr.item.price * curr.count;
+            },0)
+          
+            console.log(p)
         }
 
     </script>

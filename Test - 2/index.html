@@ -15,7 +15,8 @@
 
 <body onload="fetchProduct()">
 
-    <input type="text" id="input" style="margin: 21px;" onkeypress="filterP()" placeholder="Search">
+    <input type="text" id="input1" style="margin: 21px;"  placeholder="Search">
+    <button onclick="filterP()">Search</button>
     
     <button onclick="ascending()">Price low to high</button>
     <button onclick="decending()">Price high to low</button>
@@ -25,12 +26,16 @@
    
 
     <script>
+
+        let products = [];
+
         const fetchProduct = () => {
 
             fetch(`https://api.escuelajs.co/api/v1/products`)
                 .then(y => y.json())
                 .then(y => {
-                    dataStore = y;
+
+                    products = y;
                     displayData(y);
                  
                 })
@@ -58,15 +63,15 @@
             document.getElementById("display").innerHTML = displayHtml.join("");   
             
         
-        let dataStore = "";
+    
 
-        filterP = (data) => {
+        filterP = () => {
 
-            const filterCart = document.getElementById("input").value;
+            const filterCart = document.getElementById("input1").value;
 
-            const filterData = data.filter((v) => {
+            const filterData = products.filter((v) => {
 
-                return v.category.includes(filterCart);
+                return v.title.includes(filterCart);
             })
 
             displayData(filterData)
@@ -74,7 +79,7 @@
 
         ascending = () => {
 
-            dataStore.sort((a,b) => {
+             let a = products.sort((a,b) => {
 
                 if(a.price > b.price)
                 {
@@ -85,12 +90,12 @@
                     return -1
                 }
             })
-            displayData(dataStore);
+            displayData(a);
         }
 
         decending = () => {
 
-            dataStore.sort((a,b) => {
+          let b =  products.sort((a,b) => {
 
                 if(a.price > b.price)
                 {
@@ -101,7 +106,7 @@
                     return 1
                 }
             })
-            displayData(decendingValue);
+            displayData(b);
         }
     }
 

@@ -151,7 +151,7 @@ const data = [
   }
 ]
 
-display = () => {
+display = (data) => {
 
   const displayData = data.map((v) => {
 
@@ -177,18 +177,8 @@ display = () => {
 
   document.getElementById("myProducts").innerHTML = displayData.join("");
 }
-display();
+display(data);
 
-
-myFunction = (e) => {
-
-const filterData = data.filter((a) => {
-
-  return a.position.includes(e.target.value);
-})
-
-display(filterData);
-}
 
 
 sortData = () => {
@@ -206,4 +196,18 @@ sortData = () => {
   display(ascending);
 }
 
+searchFunction = (e) => {
+
+  
+  const searchData = data.filter((v) => {
+
+    return v.position.includes(e.target.value);
+  })
+
+  console.log(searchData);
+  
+  display(searchData);
+}
+
+  
 

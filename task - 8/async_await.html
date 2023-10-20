@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="display"></div>
     <script>
 
-        const callApi = async () => {
+        // const callApi = async () => {
 
-            const output = await fetch("https://jsonplaceholder.typicode.com/comments");
+        //     let output = await fetch("https://jsonplaceholder.typicode.com/comments");
 
-            const json = await output.json();
+        //     let json = await output.json();
 
-          document.getElementById("display").innerHTML = json
+        //     console.log(json)
+        // }
+        // callApi()
+
+        // second way 
+
+        async function display () {
+
+            let display = await fetch("https://jsonplaceholder.typicode.com/comments");
+
+            let Response = await display.json();
+
+            console.log(Response);
         }
-        callApi()
+        display()
+
     </script>
 </body>
+
 </html>

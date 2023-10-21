@@ -15,15 +15,15 @@
 
 <body onload="fetchProduct()">
 
-    <input type="text" id="input1" style="margin: 21px;"  placeholder="Search">
+    <input type="text" id="input1" style="margin: 21px;" placeholder="Search">
     <button onclick="filterP()">Search</button>
-    
+
     <button onclick="ascending()">Price low to high</button>
     <button onclick="decending()">Price high to low</button>
     <div class="row" id="display">
-       
+
     </div>
-   
+
 
     <script>
 
@@ -37,7 +37,7 @@
 
                     products = y;
                     displayData(y);
-                 
+
                 })
         }
 
@@ -45,7 +45,7 @@
 
             let displayHtml = data.map((v) => {
 
-                return(`<div class= "col-3">
+                return (`<div class= "col-3">
                 <div class="card" style="width: 28rem; margin:10px">
                     
                     <img src="${v.category.image}" class="card-img-top" alt="...">
@@ -60,56 +60,50 @@
                     </div>
                     </div>`)
             })
-            document.getElementById("display").innerHTML = displayHtml.join("");   
-            
-        
-    
+            document.getElementById("display").innerHTML = displayHtml.join("");
 
-        filterP = () => {
 
-            const filterCart = document.getElementById("input1").value;
+            filterP = () => {
 
-            const filterData = products.filter((v) => {
+                const filterCart = document.getElementById("input1").value;
 
-                return v.title.includes(filterCart);
-            })
-            console.log(filterData)
+                const filterData = products.filter((v) => {
 
-            displayData(filterData)
+                    return v.title.includes(filterCart);
+                })
+                console.log(filterData)
+
+                displayData(filterData)
+            }
+
+            ascending = () => {
+
+                let a = products.sort((a, b) => {
+
+                    if (a.price > b.price) {
+                        return 1
+                    }
+                    else {
+                        return -1
+                    }
+                })
+                displayData(a);
+            }
+
+            decending = () => {
+
+                let b = products.sort((a, b) => {
+
+                    if (a.price > b.price) {
+                        return -1
+                    }
+                    else {
+                        return 1
+                    }
+                })
+                displayData(b);
+            }
         }
-
-        ascending = () => {
-
-             let a = products.sort((a,b) => {
-
-                if(a.price > b.price)
-                {
-                    return 1
-                }
-                else
-                {
-                    return -1
-                }
-            })
-            displayData(a);
-        }
-
-        decending = () => {
-
-          let b =  products.sort((a,b) => {
-
-                if(a.price > b.price)
-                {
-                    return -1
-                }
-                else
-                {
-                    return 1
-                }
-            })
-            displayData(b);
-        }
-    }
 
     </script>
 </body>

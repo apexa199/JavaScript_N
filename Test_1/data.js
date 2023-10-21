@@ -177,6 +177,7 @@ display = (data) => {
 
   document.getElementById("myProducts").innerHTML = displayData.join("");
 }
+
 display(data);
 
 
@@ -185,8 +186,8 @@ sortData = () => {
 
   const ascending = data.sort((a, b) => {
 
-    if (a.company > b.company ) {
-       return 1
+    if (a.company > b.company) {
+      return 1
     }
     else {
       return -1;
@@ -206,5 +207,5 @@ searchFunction = (e) => {
   display(searchData);
 }
 
-  
+
 

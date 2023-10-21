@@ -234,10 +234,10 @@ const userData = [
 
 
 
-filterData = ()=> {
-    
+filterData = () => {
+
     let searchTerm = document.getElementById("dis").value;
-    let filterData = userData.filter((v)=> {
+    let filterData = userData.filter((v) => {
 
         return v.email.includes(searchTerm);
     });
@@ -248,15 +248,15 @@ filterData = ()=> {
 
 }
 
-display= (data)=>{
-    const displayHtml = data.map((v,index)=> {
+display = (data) => {
+    const displayHtml = data.map((v, index) => {
 
 
         return (`<tr><td>${v.username}</td>
         <td>${v.company.name}</td><td>${v.email}</td>
         <td>${v["address"]["city"]}</td>
         </tr>`)
-    
+
     })
 
     document.getElementById("user").innerHTML = displayHtml.join(" ");

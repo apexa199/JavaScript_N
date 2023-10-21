@@ -65,7 +65,7 @@ const next = () => {
 
 const previous = () => {
 
-    if (index > reviewsData.length) {
+    if (index < reviewsData.length) {
         
         index = 0;
     }

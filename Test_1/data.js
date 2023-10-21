@@ -198,14 +198,11 @@ sortData = () => {
 
 searchFunction = (e) => {
 
-  
   const searchData = data.filter((v) => {
 
     return v.position.includes(e.target.value);
   })
 
-  console.log(searchData);
-  
   display(searchData);
 }
 

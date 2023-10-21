@@ -117,10 +117,10 @@ const products = [
 
 
 
- display = (data) => {
+display = (data) => {
 
   const value = data.map((v) => {
-    return`<article class="product">
+    return `<article class="product">
     <img src="${v.image}" class="product-img img"/>
     <footer>
       <h5 class="product-name">${v.title}</h5>
@@ -130,24 +130,22 @@ const products = [
   </article>
 `})
 
-
   let button = products.map((a) => {
 
-    return`<button type="button" class="company-btn" id = "btn"  onclick="filterCompany('${a.company}')">${a.company}</button>`
+    return `<button type="button" class="company-btn" id = "btn"  onclick="filterCompany('${a.company}')">${a.company}</button>`
 
-  }).reduce((v,c) => {
+  }).reduce((v, c) => {
 
-    if(!v.includes(c))
-    {
+    if (!v.includes(c)) {
       v.push(c)
     }
     return v;
 
-  },[])
+  }, [])
 
-document.getElementById("companies").innerHTML = button.join("")
+  document.getElementById("companies").innerHTML = button.join("")
 
-document.getElementById("products").innerHTML = value.join("");
+  document.getElementById("products").innerHTML = value.join("");
 
 }
 
@@ -161,7 +159,7 @@ filterCompany = (company) => {
   })
 
   display(filterData);
-    
+
 }
 
 myFunction = (e) => {
@@ -170,7 +168,7 @@ myFunction = (e) => {
 
     return v.company.includes(e.target.value);
   })
-  
+
   display(searchCompany);
 }
 

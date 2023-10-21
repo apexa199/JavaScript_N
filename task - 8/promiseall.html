@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= , initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
 
-    // let fetch1 = fetch("http://jsonplaceholder.typicode.com/posts");
+        // let fetch1 = fetch("http://jsonplaceholder.typicode.com/posts");
 
-    // let fetch2 = fetch("https://jsonplaceholder.typicode.com/users");
+        // let fetch2 = fetch("https://jsonplaceholder.typicode.com/users");
 
-    // Promise.all([fetch1,fetch2]).then( y => {
+        // Promise.all([fetch1,fetch2]).then( y => {
 
-    //     console.log(y)
-    // }).catch( y =>{
+        //     console.log(y)
+        // }).catch( y =>{
 
-    //     console.log(y)
-    // })
+        //     console.log(y)
+        // })
 
-    let fetch1 = fetch("www.google.com");
 
-let fetch2 = fetch("https://jsonplaceholder.typicode.com/users");
 
-Promise.allSettled([fetch1,fetch2]).then( y => {
+        let fetch1 = fetch("www.google.com");
 
-    console.log(y)
-}).catch( y =>{
+        let fetch2 = fetch("https://jsonplaceholder.typicode.com/users");
 
-    console.log(y)
-})
+        Promise.allSettled([fetch1, fetch2]).then(y => {
+
+            console.log(y)
+        }).catch(y => {
+
+            console.log(y)
+        })
 
     </script>
 
 </body>
+
 </html>

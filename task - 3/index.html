@@ -5,34 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-</head>
-<body>
 
+</head>
+
+<body>
     <table id="menu"></table>
 
     <script>
 
         fetch("https://jsonplaceholder.typicode.com/photos")
-        .then(y => y.json())
-        .then(y => { 
-        
-            display(y);
-        })
+            .then(y => y.json())
+            .then(y => {
+
+                display(y);
+            })
 
 
         display = (data) => {
 
             let valueDisplay = data.map((v) => {
-                    if(v.id <= 20){
-                return `<tr><td>${v.albumId}</td>
+                if (v.id <= 20) {
+                    return `<tr><td>${v.albumId}</td>
                         <td>${v.id}</td><td>${v.title}</td><td><img src="${v.url}" />
-                        </td><td><img src="${v.thumbnailUrl}"/></td></tr>`}
+                        </td><td><img src="${v.thumbnailUrl}"/></td></tr>`
+                }
             })
             document.getElementById("menu").innerHTML = valueDisplay.join("");
         }
 
-        
+
     </script>
 
 </body>

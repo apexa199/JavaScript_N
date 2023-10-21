@@ -85,7 +85,7 @@ const menu = [
 
 
 
- display = (data) => {
+display = (data) => {
 
 
 
@@ -128,6 +128,7 @@ display(menu);
 filterData = (category) => {
 
   const filterValue = menu.filter((v) => {
+
     return v.category === category;
   })
 
@@ -136,33 +137,32 @@ filterData = (category) => {
 
 ascending = () => {
 
-    const ascending = menu.sort((a, b) => {
+  const ascending = menu.sort((a, b) => {
 
-      if (a.price > b.price) {
-         return 1
-      }
-      else {
-        return -1;
-      }
-    })
+    if (a.price > b.price) {
+      return 1
+    }
+    else {
+      return -1;
+    }
+  })
 
-    display(ascending);
-  }
+  display(ascending);
+}
 
-  dscending = () => {
+dscending = () => {
 
-    const dscending = menu.sort((a,b) => {
+  const dscending = menu.sort((a, b) => {
 
-      if(a.price < b.price)
-      {
-        return 1
-      }
-      else{
-        return -1
-      }
-    })
-    display(dscending);
-  }
+    if (a.price < b.price) {
+      return 1
+    }
+    else {
+      return -1
+    }
+  })
+  display(dscending);
+}
 
 
 

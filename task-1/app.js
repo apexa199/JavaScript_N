@@ -4,7 +4,7 @@ const menu = [
     title: "buttermilk pancakes",
     category: "breakfast",
     price: 15.99,
-    img: "./images/item-1.jpeg",
+    img: "https://img.freepik.com/premium-photo/delicious-pancakes-with-fresh-berries-honey_79782-2527.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
@@ -12,7 +12,7 @@ const menu = [
     title: "diner double",
     category: "lunch",
     price: 13.99,
-    img: "./images/item-2.jpeg",
+    img: "https://img.freepik.com/free-photo/tortilla-wrap-with-falafel-fresh-salad-vegan-tacos-vegetarian-healthy-food_2829-6193.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=sph  ",
     desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
   },
   {
@@ -20,7 +20,7 @@ const menu = [
     title: "godzilla milkshake",
     category: "shakes",
     price: 6.99,
-    img: "./images/item-3.jpeg",
+    img: "https://img.freepik.com/free-photo/milkshake-with-whipped-cream-oreo-cookie-top_140725-3457.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
   },
   {
@@ -28,7 +28,7 @@ const menu = [
     title: "country delight",
     category: "breakfast",
     price: 20.99,
-    img: "./images/item-4.jpeg",
+    img:"https://img.freepik.com/premium-photo/traditional-turkish-breakfast-table-bright-background_392895-385573.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
   },
   {
@@ -36,7 +36,7 @@ const menu = [
     title: "egg attack",
     category: "lunch",
     price: 22.99,
-    img: "./images/item-5.jpeg",
+    img: "https://img.freepik.com/free-photo/squid-fried-with-curry-paste-white-plate-with-vegetables-side-dishes-white-wooden-floor_1150-28469.jpg?size=626&ext=jpg",
     desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
   },
   {
@@ -44,7 +44,7 @@ const menu = [
     title: "oreo dream",
     category: "shakes",
     price: 18.99,
-    img: "./images/item-6.jpeg",
+    img: "https://img.freepik.com/premium-photo/delectable-chocolate-cocktail-infused-with-cookies-cream-resembling-mudslide-this-delightf_908985-14608.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
   },
   {
@@ -52,7 +52,7 @@ const menu = [
     title: "bacon overflow",
     category: "breakfast",
     price: 8.99,
-    img: "./images/item-7.jpeg",
+    img: "https://img.freepik.com/free-photo/front-view-fresh-sliced-ham-with-bread-slices-buns-dark-meat-color-snack-meal-food-pig_140725-92968.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
@@ -60,7 +60,7 @@ const menu = [
     title: "american classic",
     category: "lunch",
     price: 12.99,
-    img: "./images/item-8.jpeg",
+    img: "https://img.freepik.com/free-photo/delicious-fast-food-composition_23-2147695691.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
   },
   {
@@ -68,7 +68,7 @@ const menu = [
     title: "quarantine buddy",
     category: "shakes",
     price: 16.99,
-    img: "./images/item-9.jpeg",
+    img: "https://img.freepik.com/free-photo/assortment-milkshake-glasses-tray-with-chocolate-fruits_23-2148707764.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
   {
@@ -76,7 +76,7 @@ const menu = [
     title: "bison steak",
     category: "dinner",
     price: 22.99,
-    img: "./images/item-10.jpeg",
+    img: "https://img.freepik.com/free-photo/grilled-beef-fillet-medallion-with-sauce-vegetables-white-plate_140725-9210.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];

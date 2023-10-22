@@ -9,6 +9,7 @@
 
 <body>
 
+    <div id="content"></div>
     <script>
 
         async function display() {
@@ -27,7 +28,8 @@
 
                 return { ...value, "emailId": useremail.email };
             })
-            console.log(userIds);
+            
+            document.getElementById("content").innerHTML = JSON.stringify(userIds);
         }
         display()
 

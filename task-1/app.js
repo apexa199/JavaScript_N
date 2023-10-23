@@ -28,7 +28,7 @@ const menu = [
     title: "country delight",
     category: "breakfast",
     price: 20.99,
-    img:"https://img.freepik.com/premium-photo/traditional-turkish-breakfast-table-bright-background_392895-385573.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
+    img: "https://img.freepik.com/premium-photo/traditional-turkish-breakfast-table-bright-background_392895-385573.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
     desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
   },
   {
@@ -87,10 +87,7 @@ const menu = [
 
 display = (data) => {
 
-
-
   const displayHtml = data.map((v) => {
-
 
     return (`<article class="menu-item">
       <img src="${v.img}"alt="menu item" class="photo" />
@@ -104,11 +101,11 @@ display = (data) => {
     </article>`)
   })
 
-  let category = menu.map((p) => {
-    return (`<button type="button" class="filter-btn" data-id="breakfast" onclick="filterData('${p.category}')">${p.category}</button>`)
-  })
+  let category = menu.map((v) => {
 
-  let outPut = category.reduce((pre, curr, index) => {
+    return v.category;
+
+  }).reduce((pre, curr, index) => {
     if (!pre.includes(curr)) {
       pre.push(curr)
     }
@@ -116,7 +113,13 @@ display = (data) => {
 
   }, [])
 
-  document.getElementById("btn").innerHTML = outPut.join(" ");
+  let button = category.map((p) => {
+
+    return (`<button type="button" class="filter-btn" data-id="breakfast" onclick="filterData('${p}')">${p}</button>`)
+  })
+
+
+  document.getElementById("btn").innerHTML = button.join(" ");
 
   document.getElementById("menu").innerHTML = displayHtml.join(" ");
 

@@ -234,17 +234,15 @@ const userData = [
 
 
 
-filterData = () => {
+filterData = (e) => {
 
-    let searchTerm = document.getElementById("dis").value;
-    let filterData = userData.filter((v) => {
+    let filterValue = userData.filter((v) => {
 
-        return v.email.includes(searchTerm);
+        return v.email.includes(e.target.value);
     });
 
-    console.log(filterData);
 
-    display(filterData);
+    display(filterValue);
 
 }
 

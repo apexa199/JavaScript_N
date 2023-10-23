@@ -22,7 +22,7 @@
 
         login = (event) => {
 
-            event.preventDefault();
+            event.preventDefault();  //write compulsory becoz when sumit the form , page relaod ,data didn't show in console. that's why  write this so didn't reload page.
 
             let body = {
                 "email": document.getElementById("email").value,

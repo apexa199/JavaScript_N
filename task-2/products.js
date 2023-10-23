@@ -130,9 +130,10 @@ display = (data) => {
   </article>
 `})
 
-  let button = products.map((a) => {
 
-    return `<button type="button" class="company-btn" id = "btn"  onclick="filterCompany('${a.company}')">${a.company}</button>`
+  let company = products.map((a) => {
+
+    return a.company;
 
   }).reduce((v, c) => {
 
@@ -142,6 +143,12 @@ display = (data) => {
     return v;
 
   }, [])
+
+
+  let button = company.map((a) => {
+
+    return `<button type="button" class="company-btn" id = "btn"  onclick="filterCompany('${a}')">${a}</button>`
+  })
 
   document.getElementById("companies").innerHTML = button.join("")
 
@@ -166,7 +173,7 @@ myFunction = (e) => {
 
   const searchCompany = products.filter((v) => {
 
-    return v.company.includes(e.target.value);
+    return v.title.includes(e.target.value);
   })
 
   display(searchCompany);

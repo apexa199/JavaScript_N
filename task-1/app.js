@@ -1,4 +1,4 @@
-const menu = [
+let menu = [
   {
     id: 1,
     title: "buttermilk pancakes",
@@ -82,12 +82,12 @@ const menu = [
 ];
 
 
-
+const carts = []; 
 
 
 display = (data) => {
 
-  const displayHtml = data.map((v) => {
+  const displayHtml = data.map((v,index) => {
 
     return (`<article class="menu-item">
       <img src="${v.img}"alt="menu item" class="photo" />
@@ -97,6 +97,7 @@ display = (data) => {
           <h4 class="price">${v.price}</h4>
         </header>
         <p class="item-text">${v.desc}</p>
+        <button type="button" class="filter-btn" data-id="all" onclick="addProduct("${index}")>Add to cart</button>
       </div>
     </article>`)
   })
@@ -165,6 +166,34 @@ dscending = () => {
     }
   })
   display(dscending);
+}
+
+
+const addProduct = (myindex) => {
+
+  const selectedProduct = menu[myindex];
+
+  const findProduct = carts.find((v) => {
+
+      return v.item.id === selectedProduct.id
+  })
+
+  if (!findProduct) {
+
+      carts.push({ item: selectedProduct, count: 1 });
+  }
+  else {
+      findProduct.count = findProduct.count + 1;
+  }
+
+  let p = carts.reduce((pre, curr) => {
+
+      return pre + curr.item.price * curr.count;
+
+  }, 0)
+
+  console.log(carts)
+  console.log(p)
 }
 
 

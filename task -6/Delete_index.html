@@ -89,12 +89,12 @@
             fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/products/${id}`, {
                 method: "DELETE"
             }).then(y => y.json())
-                .then(y =>
+                .then(y =>{
 
-                    console.log(y))
-
-            fetchDataFromApi()
-        }
+                    console.log(y)
+                    fetchDataFromApi();
+                })
+            }
 
         const getValueFromAPI = (id) => {
 

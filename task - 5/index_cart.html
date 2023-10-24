@@ -20,8 +20,9 @@
 
     <script>
 
-        const carts = [];
-        let Products = [];
+        const carts = [];   //add the product in cart 
+
+        let Products = [];    // whole array 
 
         const fetchProduct = () => {
 
@@ -35,9 +36,11 @@
         }
 
         const display = (data) => {
+
             let displayHtml = data.map((v, index) => {
+
                 return (`<div class = "col-3">
-                    <div class="card" style="width: 29rem; id ="container">
+                    <div class="card" style="width: 23rem; id ="container">
                         <img src="${v.image}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">${v.title}</h5>
@@ -53,13 +56,16 @@
         }
 
         const addProduct = (myindex) => {
+
             const selectedProduct = Products[myindex];
+
             const findProduct = carts.find((v) => {
 
-                return v.item.id = selectedProduct.id
+                return v.item.id === selectedProduct.id
             })
 
             if (!findProduct) {
+
                 carts.push({ item: selectedProduct, count: 1 });
             }
             else {
@@ -69,8 +75,10 @@
             let p = carts.reduce((pre, curr) => {
 
                 return pre + curr.item.price * curr.count;
+
             }, 0)
 
+            console.log(carts)
             console.log(p)
         }
 

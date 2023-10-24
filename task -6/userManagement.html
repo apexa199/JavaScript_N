@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form onsubmit="addproduct(event)">
+    <form onsubmit="addProduct(event)">
 
         <input type="text" id="Model" />
         <input type="text" id="rating" />
@@ -20,26 +20,24 @@
 
     <script>
 
-        const addproduct = (e) => {
+        const addProduct = (e) => {
 
+            event.preventDefault();
+            
+            let myProduct = {};
 
-
-            let myproduct = {};
-
-            let Product = document.querySelectorAll("input").forEach((v) => {
+           const Product = document.querySelectorAll("input").forEach((v) => {
 
                 if (v.type !== 'submit') {
 
                     myproduct[v.id] = v.value;
                 }
-
-
             })
 
             fetch("https://65276509917d673fd76da263.mockapi.io/Product", {
 
                 method: "POST",
-                body: JSON.stringify(myproduct),
+                body: JSON.stringify(myProduct),
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -52,7 +50,7 @@
                 })
 
         }
-        addproduct();
+        
     </script>
 
 </body>

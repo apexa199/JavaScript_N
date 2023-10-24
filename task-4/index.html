@@ -15,6 +15,7 @@
 
 <body>
   <form onsubmit="saveData(event)">
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title</label>
       <input type="text" class="form-control" id="title">
@@ -47,15 +48,14 @@
   </form>
 
   <script>
+
     saveData = (e) => {
 
       event.preventDefault();
 
-      const fieldValues = document.querySelectorAll(".form-control");
-
       let obj = {};
 
-      fieldValues.forEach((v) => {
+      const fieldValues = document.querySelectorAll(".form-control").forEach((v) => {
 
         if (v.type === "checkbox") {
           obj[v.id] = v.checked;
@@ -72,12 +72,12 @@
         headers: {
           'content-Type': "application/json"
         }
-      }).then(y => y.json())
+      })
+        .then(y => y.json())
         .then(y => {
+
           console.log(y);
         })
-
-      console.log(obj);
 
     }
 

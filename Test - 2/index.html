@@ -63,15 +63,14 @@
             document.getElementById("display").innerHTML = displayHtml.join("");
 
 
-            filterP = () => {
+            filterP = (title) => {
 
-                const filterCart = document.getElementById("input1").value;
+                let filterValue = document.getElementById("input1").value;
 
                 const filterData = products.filter((v) => {
 
-                    return v.title.includes(filterCart);
+                    return v.title === title;
                 })
-                console.log(filterData)
 
                 displayData(filterData)
             }

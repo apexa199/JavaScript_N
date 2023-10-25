@@ -82,12 +82,12 @@ let menu = [
 ];
 
 
-const carts = []; 
+const carts = [];
 
 
 display = (data) => {
 
-  const displayHtml = data.map((v,index) => {
+  const displayHtml = data.map((v, index) => {
 
     return (`<article class="menu-item">
       <img src="${v.img}"alt="menu item" class="photo" />
@@ -175,27 +175,54 @@ const addProduct = (myindex) => {
 
   const findProduct = carts.find((v) => {
 
-      return v.item.id === selectedProduct.id
+    return v.item.id === selectedProduct.id
   })
 
   if (!findProduct) {
 
-      carts.push({ item: selectedProduct, count: 1 });
+    carts.push({ item: selectedProduct, count: 1 });
   }
   else {
-      findProduct.count = findProduct.count + 1;
+    findProduct.count = findProduct.count + 1;
   }
 
   let p = carts.reduce((pre, curr) => {
 
-      return pre + curr.item.price * curr.count;
+    return pre + curr.item.price * curr.count;
 
   }, 0)
 
-  console.log(carts)
-  console.log(p)
+  document.getElementById("myModal").innerHTML(carts)
+  document.getElementById("myModal").innerHTML(p)
 }
 
+
+const upserData = (e) => {
+
+  e.preventDefault();
+
+  let obj = {
+    "name": document.getElementById("name").value,
+    "title": document.getElementById("title").value,
+    "id": document.getElementById("id").value,
+  }
+
+  let id = document.getElementById("id").value;
+
+  fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/" + id, {
+
+    body: JSON.stringify(obj),
+    method: "PUT",
+    headers: {
+      'Content-type': "application/json"
+    }
+  }).then(y => y.json())
+    .then(y => {
+
+      console.log(y);
+      fetchDataFromApi()
+    })
+}
 
 
 

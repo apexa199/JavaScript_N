@@ -43,16 +43,50 @@
         <a class="navbar-brand" href="">
           <img
             src="https://img.freepik.com/premium-vector/shoping-cart-flat-vector-icon-symbol-buy-vector-illustration_736051-198.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais"
-            alt="" width="50" height="50" style="padding-right: 66rem;" class="d-inline-block align-text-top">
+            alt="" width="50" height="50" style="padding-right: 80rem;" class="d-inline-block align-text-top">
         </a>
       </div>
 
       <button type="button" class="filter-btn" data-id="all" onclick="display(menu)">all</button>
-      <button type="button" class="filter-btn" data-id="all" onclick="ascending()">Asc-Order</button>
-      <button type="button" class="filter-btn" data-id="all" onclick="dscending()">Dsc-Order</button>
+      <button type="button" class="filter-btn" data-id="all" onclick="ascending()">Low to High</button>
+      <button type="button" class="filter-btn" data-id="all" onclick="dscending()">High to Law</button>
 
-    </div>
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="filter-btn" data-id="all" data-toggle="modal" data-target="#myModal" onclick="upserData()">Show Cart</button>
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Selectes Items $ Price</h4>
+            </div>
+            <div class="modal-body">
+            
+              <form onsubmit="upserData(event)">
+
+                <input type="hidden" id="id" />
+                <input type="text" id="name" />
+                <input type="text" id="title" />
+
+                <input type="submit" value="save" />
+            </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
   </nav>
+
 
   <section class="menu">
     <!-- title -->
@@ -129,7 +163,7 @@
 
         </div>
         <table id="collect"></table>
-        
+
   </section>
 
   <!-- javascript -->

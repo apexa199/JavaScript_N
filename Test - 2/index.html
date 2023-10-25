@@ -16,10 +16,12 @@
 <body onload="fetchProduct()">
 
     <input type="text" id="input1" style="margin: 21px;" placeholder="Search">
-    <button onclick="filterP()">Search</button>
+
+    <button onclick="filterP(event)">Search</button>
 
     <button onclick="ascending()">Price low to high</button>
     <button onclick="decending()">Price high to low</button>
+    
     <div class="row" id="display">
 
     </div>

@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add New Record</button></td>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onclick=" dataAdd(event)">Add New
+        Record</button></td>
 
     <table id="display"></table>
 
@@ -36,7 +37,7 @@
                         <input type="text" id="name" />
                         <input type="text" id="title" />
 
-                        <input type="submit" value="save" />
+                        <input type="submit" value="save" onclick="dataAdd(event)" />
                     </form>
                 </div>
 
@@ -89,12 +90,12 @@
             fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/products/${id}`, {
                 method: "DELETE"
             }).then(y => y.json())
-                .then(y =>{
+                .then(y => {
 
                     console.log(y)
                     fetchDataFromApi();
                 })
-            }
+        }
 
         const getValueFromAPI = (id) => {
 
@@ -109,6 +110,7 @@
                     document.getElementById("id").value = id;
 
                 })
+                
         }
 
         const upserData = (e) => {
@@ -122,7 +124,7 @@
             }
 
             let id = document.getElementById("id").value;
-            
+
             fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/" + id, {
 
                 body: JSON.stringify(obj),
@@ -133,6 +135,33 @@
             }).then(y => y.json())
                 .then(y => {
 
+                    console.log(y);
+                    fetchDataFromApi()
+                })
+        }
+
+        const dataAdd = (e) => {
+
+            e.preventDefault();
+
+            let obj = {
+                "name": document.getElementById("name").value,
+                "title": document.getElementById("title").value,
+                "id": document.getElementById("id").value,
+            }
+
+
+            fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/", {
+
+                body: JSON.stringify(obj),
+                method: "PUT",
+                headers: {
+                    'Content-type': "application/json"
+                }
+            }).then(y => y.json())
+                .then(y => {
+
+                    alert(y)
                     console.log(y);
                     fetchDataFromApi()
                 })

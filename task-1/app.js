@@ -98,6 +98,7 @@ display = (data) => {
         </header>
         <p class="item-text">${v.desc}</p>
         <button type="button" class="filter-btn" data-id="all" onclick="addProduct("${index}")>Add to cart</button>
+        
       </div>
     </article>`)
   })
@@ -192,38 +193,26 @@ const addProduct = (myindex) => {
 
   }, 0)
 
-  document.getElementById("myModal").innerHTML(carts)
-  document.getElementById("myModal").innerHTML(p)
+console.log(carts)
+
 }
 
 
-const upserData = (e) => {
+const getValueFromAPI = (id) => {
 
-  e.preventDefault();
+  fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/products/${id}`)
+      .then(y => y.json)
+      .then(y => {
 
-  let obj = {
-    "name": document.getElementById("name").value,
-    "title": document.getElementById("title").value,
-    "id": document.getElementById("id").value,
-  }
+          console.log(y)
 
-  let id = document.getElementById("id").value;
+          document.getElementById("name").value = y.title;
+          document.getElementById("title").value = y.price;
+          document.getElementById("id").value = id;
 
-  fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/" + id, {
-
-    body: JSON.stringify(obj),
-    method: "PUT",
-    headers: {
-      'Content-type': "application/json"
-    }
-  }).then(y => y.json())
-    .then(y => {
-
-      console.log(y);
-      fetchDataFromApi()
-    })
+      })
+      
 }
-
 
 
 

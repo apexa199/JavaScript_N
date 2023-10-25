@@ -193,7 +193,8 @@ const addProduct = (myindex) => {
 
   }, 0)
 
-console.log(carts)
+console.log(carts);
+console.log(p)
 
 }
 

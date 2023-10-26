@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Mangment</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <form onload="saveData()">
+            <input type="text" name="first name" class="form-control mb-4" id="fname" placeholder="Enter Frist Name" />
+            <input type="text" name="last name" class="form-control mb-4" id="lname" placeholder="Enter Last Name" />
+            <input type="email" name="email" class="form-control mb-4" id="email" placeholder=" Enter Email" />
+            <input type="number" name="Number" class="form-control mb-4" id="number"
+                placeholder="Enter Mobile Number" />
+            <input type="button" value="Add Data" class="btn btn-success mb-4" id="add" onclick="()" />
+            <input type="button" value="Create Data" class="btn btn-success mb-4" id="update" onclick="setData()" />
+        </form>
+        <hr />
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-bordered" id="table">
+                    <thead>
+                        <tr>
+                            <th>Frist Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Mobile Number</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabledata"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

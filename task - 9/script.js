@@ -1,31 +1,44 @@
 
- saveData = () => {
+const saveInfo = () => {
 
-    let a = { 
-        firstName: "apexa",
-         lastName: "kamani", 
-         email: "ape@123", 
-         number: "012245673" };
+let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];
 
-    localStorage.setItem("personInfo", JSON.stringify(a));
-    let tableData = document.querySelectorAll(".form-control");
+   let obj = {
+      "fname":document.getElementById("fname").value,
+      "lname":document.getElementById("lname").value,
+      "email":document.getElementById("email").value,
+      "number":document.getElementById("number").value,
+      "type":document.getElementById("type").value,
+   }
+   myitem = push(obj);
 
-    let data = localStorage.getItem("personInfo");
-    data = JSON.parse(data);
-    let store = "";
-
-     data.map((value, index) => { store +=
-
-         (`<tr>
-               <td>${value.firstName}</td> 
-                <td>${value.lastName}</td>
-                <td>${value.email}</td>
-                <td>${value.number}</td>
-                <button btn onclick="editData(${index})">Update</button>
-             <button onclick="deleteData(${index})" >Delete</button>
-                </tr>`)
-             })
-         document.getElementById("tabledata").innerHTML += store;   
+   localStorage.setItem("contactInfo",JSON.stringify(myitem));
 }
-saveData()
+
+const display = () => {
+
+   let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];
+
+   let value = myitem.map((v, index) => {
+
+      return (`<tr><td>${v.fname}</td><td>${v.lname}</td><td>${v.email}</td><td>${v.number}</td><td>${v.type}</td><td>
+      <button  class="btn btn-success" onclick="editData('${index}')">Edit Data</button></td><td><button class="btn btn-success" onclick ="deleteData('${index}')">Delete Data</button></td></tr>`)
+   })
+
+   document.getElementById("tabledata").innerHTML = value.join(" ");
+}
+
+const deleteData = (index) => {
+
+   let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];
+
+   myitem.splice[index, 1];
+
+   localStorage.setItem("contactInfo", JSON.stringify(myitem));
+
+   display();
+
+}
+
+display();
 

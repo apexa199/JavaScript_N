@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .navbar>.container-fluid {
+    .navbar>.container {
 
       display: flex;
       flex-wrap: inherit;
@@ -38,24 +38,19 @@
   <div class="row" id="display"></div>
 
   <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid ">
-      <div>
-        <a class="navbar-brand" href="" data-bs-toggle="modal" data-bs-target="#myModal" onclick=" ">
-          <img
-            src="https://img.freepik.com/premium-vector/shoping-cart-flat-vector-icon-symbol-buy-vector-illustration_736051-198.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais"
-            alt="" width="50" height="50" style="padding-right: 80rem;" class="d-inline-block align-text-top">
-        </a>
-      </div>
+    <div class="container ">
 
+        <button type="button"  data-bs-dismiss="modal" id="#myModal" class="filter-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg></button>
       <button type="button" class="filter-btn" data-id="all" onclick="display(menu)">all</button>
       <button type="button" class="filter-btn" data-id="all" onclick="ascending()">Low to High</button>
       <button type="button" class="filter-btn" data-id="all" onclick="dscending()">High to Law</button>
 
   </nav>
 
-  
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
+     <!-- The Modal -->
+     <div class="modal" id="myModal">
       <div class="modal-dialog">
           <div class="modal-content">
 
@@ -68,7 +63,11 @@
               <!-- Modal body -->
               <div class="modal-body">
 
-                
+                  <form >
+
+                    
+                     
+                  </form>
               </div>
 
               <!-- Modal footer -->
@@ -79,7 +78,7 @@
           </div>
       </div>
   </div>
-
+   
 
 
 

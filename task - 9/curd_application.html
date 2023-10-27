@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curd Application</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body >
+    <div class="row">
+        <div class="container col-6 mt-5">
+            <form onload="saveData()">
+                <input type="text" class="form-control mb-4" id="fname"
+                    placeholder="Enter Frist Name" />
+                <input type="text" class="form-control mb-4" id="lname"
+                    placeholder="Enter Last Name" />
+                <input type="email" class="form-control mb-4" id="email" placeholder=" Enter Email" />
+                <input type="number" name="Number" class="form-control mb-4" id="number"
+                    placeholder="Enter Mobile Number" />
+                <select id="type" class="mb-4">
+                    <option>Home</option>
+                    <option>Office</option>
+                    <option>Laneline</option>
+                </select><br>
+                <input type="button" value="Add Data" class="btn btn-success mb-4" id="Save" onclick="saveInfo()"/>
+                
+            </form>
+
+        </div>
+        <div class="row mt-5">
+            <div class="container col-7">
+                <table class="table table-bordered" id="display">
+                    <thead class="">
+                        <tr>
+                            <th>Frist Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Mobile Number</th>
+                            <th>Type</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                  
+                    <tbody id="tabledata"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

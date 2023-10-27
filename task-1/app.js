@@ -97,7 +97,7 @@ display = (data) => {
           <h4 class="price">${v.price}</h4>
         </header>
         <p class="item-text">${v.desc}</p>
-        <button type="button" class="filter-btn" data-id="all" onclick="addProduct("${index}")>Add to cart</button>
+        <a type="button" class=" btn filter-btn" data-id="all" onclick="addProduct('${index}')">Add to cart</a>
         
       </div>
     </article>`)
@@ -193,26 +193,72 @@ const addProduct = (myindex) => {
 
   }, 0)
 
-console.log(carts);
-console.log(p)
+document.getElementById("myModal") = carts;
+document.getElementById("myModal") = p;
 
 }
 
 
-const getValueFromAPI = (id) => {
-
-  fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/products/${id}`)
-      .then(y => y.json)
-      .then(y => {
-
-          console.log(y)
+const getValueFromCart = (e) => {
 
           document.getElementById("name").value = y.title;
           document.getElementById("title").value = y.price;
           document.getElementById("id").value = id;
 
-      })
       
+      
+}
+const upserData = (e) => {
+
+  e.preventDefault();
+
+  let obj = {
+      "name": document.getElementById("name").value,
+      "title": document.getElementById("title").value,
+      "id": document.getElementById("id").value,
+  }
+
+  let id = document.getElementById("id").value;
+
+  fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/" + id, {
+
+      body: JSON.stringify(obj),
+      method: "PUT",
+      headers: {
+          'Content-type': "application/json"
+      }
+  }).then(y => y.json())
+      .then(y => {
+
+          console.log(y);
+          fetchDataFromApi()
+      })
+}
+
+const dataAdd = (e) => {
+
+  e.preventDefault();
+
+  let obj = {
+      "name": document.getElementById("name").value,
+      "title": document.getElementById("title").value,
+      "id": document.getElementById("id").value,
+  }
+
+
+  fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/", {
+
+      body: JSON.stringify(obj),
+      method: "PUT",
+      headers: {
+          'Content-type': "application/json"
+      }
+  }).then(y => y.json())
+      .then(y => {
+
+          console.log(y);
+          fetchDataFromApi()
+      })
 }
 
 

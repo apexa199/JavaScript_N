@@ -17,7 +17,7 @@
 
     <input type="text" id="input1" style="margin: 21px;" placeholder="Search">
 
-    <button onclick="filterP(event)">Search</button>
+    <button onclick="filterP()">Search</button>
 
     <button onclick="ascending()">Price low to high</button>
     <button onclick="decending()">Price high to low</button>
@@ -65,13 +65,13 @@
             document.getElementById("display").innerHTML = displayHtml.join("");
 
 
-            filterP = (title) => {
+            filterP = () => {
 
                 let filterValue = document.getElementById("input1").value;
 
-                const filterData = products.filter((v) => {
+                let filterData = products.filter((v) => {
 
-                    return v.title === title;
+                    return v.category.name.includes(filterValue);
                 })
 
                 displayData(filterData)

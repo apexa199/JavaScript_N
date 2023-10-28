@@ -16,6 +16,12 @@
     <div class="row">
         <div class="container col-6 mt-5">
             <form onload="saveData()">
+
+                <input type="text" class="form-control mb-4" id="Search" onkeypress="search(event)"
+                    placeholder="Search Here" />
+
+                <input type="hidden" class="form-control mb-4" id="index" value="-1"/>
+
                 <input type="text" class="form-control mb-4" id="fname"
                     placeholder="Enter Frist Name" />
                 <input type="text" class="form-control mb-4" id="lname"

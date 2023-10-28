@@ -193,75 +193,8 @@ const addProduct = (myindex) => {
 
   }, 0)
 
-document.getElementById("myModal") = carts;
-document.getElementById("myModal") = p;
+document.getElementById("cart") = carts;
+document.getElementById("cart") = p;
 
 }
-
-
-const getValueFromCart = (e) => {
-
-          document.getElementById("name").value = y.title;
-          document.getElementById("title").value = y.price;
-          document.getElementById("id").value = id;
-
-      
-      
-}
-const upserData = (e) => {
-
-  e.preventDefault();
-
-  let obj = {
-      "name": document.getElementById("name").value,
-      "title": document.getElementById("title").value,
-      "id": document.getElementById("id").value,
-  }
-
-  let id = document.getElementById("id").value;
-
-  fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/" + id, {
-
-      body: JSON.stringify(obj),
-      method: "PUT",
-      headers: {
-          'Content-type': "application/json"
-      }
-  }).then(y => y.json())
-      .then(y => {
-
-          console.log(y);
-          fetchDataFromApi()
-      })
-}
-
-const dataAdd = (e) => {
-
-  e.preventDefault();
-
-  let obj = {
-      "name": document.getElementById("name").value,
-      "title": document.getElementById("title").value,
-      "id": document.getElementById("id").value,
-  }
-
-
-  fetch("https://65296f7a55b137ddc83ed1d8.mockapi.io/products/", {
-
-      body: JSON.stringify(obj),
-      method: "PUT",
-      headers: {
-          'Content-type': "application/json"
-      }
-  }).then(y => y.json())
-      .then(y => {
-
-          console.log(y);
-          fetchDataFromApi()
-      })
-}
-
-
-
-
 

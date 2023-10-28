@@ -62,16 +62,17 @@ const editData = (index) => {
 
    let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];
 
-   document.getElementById("fname").value = myitem[index].fname,
-      document.getElementById("lname").value = myitem[index].lname,
-      document.getElementById("email").value = myitem[index].email,
-      document.getElementById("number").value = myitem[index].number,
-      document.getElementById("type").value = myitem[index].type,
+   document.getElementById("fname").value = myitem[index].fname;
+      document.getElementById("lname").value = myitem[index].lname;
+      document.getElementById("email").value = myitem[index].email;
+      document.getElementById("number").value = myitem[index].number;
+      document.getElementById("type").value = myitem[index].type;
 
-      document.getElementById("index").value = index,
+      document.getElementById("index").value = index;
 
       display();
 }
+
 const search = (e) => {
 
    let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];

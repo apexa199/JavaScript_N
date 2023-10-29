@@ -4,8 +4,7 @@ const reviews = [
         id: 1,
         name: "susan smith",
         job: "web developer",
-        img:
-            "https://img.freepik.com/free-photo/mid-shot-woman-counselor-office_23-2148759171.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
+        img:"IMG/img-1.avif",
         text:
             "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
     },
@@ -13,8 +12,7 @@ const reviews = [
         id: 2,
         name: "anna johnson",
         job: "web designer",
-        img:
-            "https://img.freepik.com/free-photo/side-view-woman-posing-chair_23-2149915943.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais",
+        img: "IMG/img-2.avif",
         text:
             "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
     },
@@ -64,7 +62,7 @@ const display = () => {
 
     document.getElementById("author").innerHTML = reviews[index].name;
     document.getElementById("job").innerHTML = reviews[index].job;
-    document.getElementById("person-img").innerHTML = reviews[index].img;
+    document.getElementById("img").innerHTML = reviews[index].img;
     document.getElementById("info").innerHTML = reviews[index].text;
 
     document.getElementsByClassName("container").innerHTML = displayHtml.join("")

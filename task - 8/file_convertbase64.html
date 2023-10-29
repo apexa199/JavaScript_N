@@ -18,8 +18,8 @@
             const file = e.target.files[0];
 
             const base64 = convertBase64(file).then(y => {
-
-                localStorage.setItem("files" ,y);
+                
+                console.log(y)
 
             }).then(y => {
 
@@ -35,10 +35,10 @@
                         resolve(fileReader.result);
                     };
                     fileReader.onerror = (error) => {
-                        reject(error)
-                    }
+                        reject(error);
+                    };
 
-                })
+                });
             }
         }
     </script>

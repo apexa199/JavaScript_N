@@ -62,7 +62,7 @@ const editData = (index) => {
 
    let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];
 
-   document.getElementById("fname").value = myitem[index].fname;
+      document.getElementById("fname").value = myitem[index].fname;
       document.getElementById("lname").value = myitem[index].lname;
       document.getElementById("email").value = myitem[index].email;
       document.getElementById("number").value = myitem[index].number;

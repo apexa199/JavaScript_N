@@ -192,20 +192,32 @@ const addProduct = (myindex) => {
     return pre + curr.item.price * curr.count;
 
   }, 0)
-console.log(carts)
-console.log(p)
+
+  // document.getElementById("tabledata").innerHTML = JSON.stringify(carts);
+  
+  console.log(p);
+  
 
 }
-const getValueFromAPI = (data) => {
+displaydata = (index) => {
 
-  let datadisplay = data.map((index) => {
+  // const displayHtml1 = menu.map((v, index) => {
 
+  //   return (`<article class="menu-item">
+     
+  //   <div class="item-info">
+  //       <header><tr>
+  //         <td>${v.category}</td>
+  //         <td class="price">${v.price}</td></tr>
+  //       </header>
+      
+  //       <a type="button" class=" btn filter-btn" data-id="all" onclick="addProduct('${index}')">Add to cart</a>
+        
+  //     </div>
+  //   </article>`)
+  // })
 
-    document.getElementById("title").value = data[index].title;
-    document.getElementById("price").value = data[index].price;
-
-   
-
-  })     
-  document.getElementById("cart") = datadisplay;
+  //   document.getElementById("tabledata").innerHTML  = displayHtml1[index].menu.join("");
+  // display();
 }
+

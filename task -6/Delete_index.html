@@ -37,7 +37,7 @@
                         <input type="text" id="name" />
                         <input type="text" id="title" />
 
-                        <input type="submit" value="save" onclick="dataAdd(event)" />
+                        <input type="submit" value="save" />
                     </form>
                 </div>
 
@@ -100,17 +100,17 @@
         const getValueFromAPI = (id) => {
 
             fetch(`https://65296f7a55b137ddc83ed1d8.mockapi.io/products/${id}`)
-                .then(y => y.json)
-                .then(y => {
 
-                    console.log(y)
-
+            .then(y => y.json())
+            .then(y => {
+                console.log(y);
+            
                     document.getElementById("name").value = y.name;
                     document.getElementById("title").value = y.title;
                     document.getElementById("id").value = id;
 
-                })
-                
+            })
+
         }
 
         const upserData = (e) => {

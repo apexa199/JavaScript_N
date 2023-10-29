@@ -192,9 +192,20 @@ const addProduct = (myindex) => {
     return pre + curr.item.price * curr.count;
 
   }, 0)
-
-document.getElementById("cart") = carts;
-document.getElementById("cart") = p;
+console.log(carts)
+console.log(p)
 
 }
+const getValueFromAPI = (data) => {
 
+  let datadisplay = data.map((index) => {
+
+
+    document.getElementById("title").value = data[index].title;
+    document.getElementById("price").value = data[index].price;
+
+   
+
+  })     
+  document.getElementById("cart") = datadisplay;
+}

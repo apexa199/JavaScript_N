@@ -4,7 +4,7 @@ const products = [
     title: 'high-back bench',
     company: 'ikea',
     image:
-      'https://dl.airtable.com/.attachments/14ac9e946e1a02eb9ce7d632c83f742f/4fd98e64/product-1.jpeg',
+      'https://img.freepik.com/free-vector/wooden-furniture_1308-40575.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 9.99,
   },
   {
@@ -12,7 +12,7 @@ const products = [
     title: 'albany table',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
+      'https://img.freepik.com/premium-photo/wooden-rustic-table-window-decoration_742252-3436.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 79.99,
   },
   {
@@ -20,7 +20,7 @@ const products = [
     title: 'albany table',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
+      'https://img.freepik.com/premium-photo/empty-white-plant-pot-table_230311-24760.jpg?w=360',
     price: 788.99,
   },
   {
@@ -28,7 +28,7 @@ const products = [
     title: 'albany table',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg',
+      'https://img.freepik.com/free-vector/many-types-wooden-furnitures-illustration_1308-2694.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 1279.99,
   },
   {
@@ -36,7 +36,7 @@ const products = [
     title: 'accent chair',
     company: 'caressa',
     image:
-      'https://dl.airtable.com/.attachments/f292eaec4fea8a791b037c759ae559c9/2d5e34d5/product-4.jpeg',
+      'https://img.freepik.com/free-photo/mid-century-modern-living-room-interior-design-with-monstera-tree_53876-129804.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 25.99,
   },
   {
@@ -44,7 +44,7 @@ const products = [
     title: 'wooden table',
     company: 'caressa',
     image:
-      'https://dl.airtable.com/.attachments/5b3ad76dfd6ca5e31810cb99141c7ede/69829b2f/pexels-dominika-roseclay-1139785.jpg',
+      'https://img.freepik.com/free-photo/home-workspace-minimalistic-design_23-2148991464.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 45.99,
   },
   {
@@ -52,7 +52,7 @@ const products = [
     title: 'dining table',
     company: 'caressa',
     image:
-      'https://dl.airtable.com/.attachments/06bbede65bd09196b4a81a8e7b59e683/8af0aeb5/product-8.jpg',
+      'https://img.freepik.com/free-photo/four-person-table-front-window-restaurant_140725-2513.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 6.99,
   },
   {
@@ -60,7 +60,7 @@ const products = [
     title: 'sofa set',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/443aa7884207dae7c3cc127262a2f993/d4f33110/product-1.jpeg',
+      'https://img.freepik.com/free-vector/modern-lounge-attic-with-wooden-ceiling-beam-windows-roo_1441-4007.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 69.99,
   },
   {
@@ -68,7 +68,7 @@ const products = [
     title: 'modern bookshelf',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/a889b1928b134c2ca0b5bbca32ea9abf/65c8a9a6/product-7.jpg',
+      'https://img.freepik.com/free-photo/room-interior-design_23-2148899489.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 8.99,
   },
   {
@@ -76,7 +76,7 @@ const products = [
     title: 'emperor bed',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/10fdf29ae17f2d1f98770ae42584d021/82b9403f/product-6.jpg',
+      'https://img.freepik.com/premium-photo/golden-room_839169-5690.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais ',
     price: 21.99,
   },
   {
@@ -84,7 +84,7 @@ const products = [
     title: 'utopia sofa',
     company: 'marcos',
     image:
-      'https://dl.airtable.com/.attachments/6ac7f7b55d505057317534722e5a9f03/9183491e/product-3.jpg',
+      'https://img.freepik.com/free-photo/comfortable-sofa-illuminated-by-modern-electric-lamps-generated-by-ai_188544-11703.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 39.95,
   },
   {
@@ -92,7 +92,7 @@ const products = [
     title: 'entertainment center',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/da5e17fd71f50578d525dd5f596e407e/d5e88ac8/product-2.jpg',
+      'https://img.freepik.com/premium-photo/inflatable-colored-playground_693425-8383.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 29.98,
   },
   {
@@ -100,7 +100,7 @@ const products = [
     title: 'albany sectional',
     company: 'ikea',
     image:
-      'https://dl.airtable.com/.attachments/05ecddf7ac8d581ecc3f7922415e7907/a4242abc/product-1.jpeg',
+      'https://img.freepik.com/free-vector/huge-building_1308-84295.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 10.99,
   },
   {
@@ -108,7 +108,7 @@ const products = [
     title: 'leather sofa',
     company: 'liddy',
     image:
-      'https://dl.airtable.com/.attachments/3245c726ee77d73702ba8c3310639727/f000842b/product-5.jpg',
+      'https://img.freepik.com/free-photo/modern-industrial-luxury-style-living-room-interior-with-leather-couch-golden-lamp-houseplants_53876-128128.jpg?size=626&ext=jpg&ga=GA1.1.1491322341.1697913675&semt=ais',
     price: 9.99,
   },
 ];
@@ -177,5 +177,34 @@ myFunction = (e) => {
   })
 
   display(searchCompany);
+}
+
+ascending = () => {
+
+  const ascending = products.sort((a, b) => {
+
+    if (a.price > b.price) {
+      return 1
+    }
+    else {
+      return -1;
+    }
+  })
+
+  display(ascending);
+}
+
+dscending = () => {
+
+  const dscending = products.sort((a, b) => {
+
+    if (a.price < b.price) {
+      return 1
+    }
+    else {
+      return -1
+    }
+  })
+  display(dscending);
 }
 

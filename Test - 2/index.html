@@ -11,6 +11,12 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+        <style>
+            .change{
+              
+                min-height: 500px;
+            }
+        </style>
 </head>
 
 <body onload="fetchProduct()">
@@ -48,9 +54,9 @@
             let displayHtml = data.map((v) => {
 
                 return (`<div class= "col-3 ml-3">
-                <div class="card-deck" style="width: 25rem;">
+                <div class="card-deck">
                     
-                    <img src="${v.category.image}" class="card-img-top" alt="...">
+                    <img src="${v.category.image}" class="card-img-top change" alt="...">
                     <div class="card-body">
                         
                         <h5 class="card-title">${v.title}</h5>

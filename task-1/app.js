@@ -201,23 +201,23 @@ const addProduct = (myindex) => {
 }
 displaydata = (index) => {
 
-  // const displayHtml1 = menu.map((v, index) => {
+  const displayHtml1 = menu.map((v, index) => {
 
-  //   return (`<article class="menu-item">
+    return (`<article class="menu-item">
      
-  //   <div class="item-info">
-  //       <header><tr>
-  //         <td>${v.category}</td>
-  //         <td class="price">${v.price}</td></tr>
-  //       </header>
+    <div class="item-info">
+        <header><tr>
+          <td>${v.category}</td>
+          <td class="price">${v.price}</td></tr>
+        </header>
       
-  //       <a type="button" class=" btn filter-btn" data-id="all" onclick="addProduct('${index}')">Add to cart</a>
+        <a type="button" class=" btn filter-btn" data-id="all" onclick="addProduct('${index}')">Add to cart</a>
         
-  //     </div>
-  //   </article>`)
-  // })
+      </div>
+    </article>`)
+  })
 
-  //   document.getElementById("tabledata").innerHTML  = displayHtml1[index].menu.join("");
-  // display();
+    document.getElementById("tabledata").innerHTML  = displayHtml1[index].menu.join("");
+  display();
 }
 

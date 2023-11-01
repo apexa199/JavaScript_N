@@ -12,7 +12,7 @@ const reviews = [
         id: 2,
         name: "anna johnson",
         job: "web designer",
-        img: "IMG/img-2.avif",
+        img: "IMG/Capture.jpg",
         text:
             "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
     },
@@ -60,10 +60,10 @@ const display = () => {
     </article>`
     })
 
-    document.getElementById("author").innerHTML = reviews[index].name;
-    document.getElementById("job").innerHTML = reviews[index].job;
-    document.getElementById("img").innerHTML = reviews[index].img;
-    document.getElementById("info").innerHTML = reviews[index].text;
+    document.getElementById("author").innerHTML = reviews[index].name,
+    document.getElementById("job").innerHTML = reviews[index].job,
+    document.getElementById("img").innerHTML = reviews[index].img,
+    document.getElementById("info").innerHTML = reviews[index].text,
 
     document.getElementsByClassName("container").innerHTML = displayHtml.join("")
 }

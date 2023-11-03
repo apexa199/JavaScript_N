@@ -232,15 +232,3 @@ const dec = (index) =>
   displayCartItems(carts);
 } 
 
-const displayTotal = () => {
-
-  let a = carts.reduce((pre, curr) => {
-
-    return pre + curr.item.price * curr.count;
-
-  }, 0)
-
-  document.getElementById("total").innerText = a;
-  console.log(a)
-}
-

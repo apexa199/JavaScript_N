@@ -126,9 +126,9 @@ display = (data) => {
   document.getElementById("menu").innerHTML = displayHtml.join(" ");
 
 }
-
-
 display(menu);
+
+
 
 filterData = (category) => {
 
@@ -193,31 +193,54 @@ const addProduct = (myindex) => {
 
   }, 0)
 
-  // document.getElementById("tabledata").innerHTML = JSON.stringify(carts);
-  
-  console.log(p);
-  
+  document.getElementById("dis").innerHTML = carts.length;
+ 
+   document.getElementById("total").value = p;
 
+  displayCartItems(carts);
 }
-displaydata = (index) => {
 
-  const displayHtml1 = menu.map((v, index) => {
 
-    return (`<article class="menu-item">
-     
-    <div class="item-info">
-        <header><tr>
-          <td>${v.category}</td>
-          <td class="price">${v.price}</td></tr>
-        </header>
-      
-        <a type="button" class=" btn filter-btn" data-id="all" onclick="addProduct('${index}')">Add to cart</a>
-        
-      </div>
-    </article>`)
+const displayCartItems = (carts) => {
+
+  let p = carts.map((v,index) => {
+
+    return (`<tr>
+        <td><img src="${v.item.img}" alt="menu item" class="photo" /></td>
+        <td><h4>${v.item.category}<h4></td>
+        <td ><h4 class="price">${v.item.price}</h4></td>
+        <td><input type="text" class="inputchange" value="${v.count}"/>
+        <button type="button" class="filter-btn" onclick="inc('${index}')">+</button>
+        <button type="button" class="filter-btn" onclick="dec('${index}')">-</button></td>           
+      </tr>`)
   })
 
-    document.getElementById("tabledata").innerHTML  = displayHtml1[index].menu.join("");
-  display();
+  document.getElementById("cartitems").innerHTML = p.join("");
+}
+
+const inc = (index) =>
+{
+  carts[index].count = carts[index].count+1;
+
+  displayCartItems(carts);
+} 
+
+const dec = (index) =>
+{
+  carts[index].count = carts[index].count-1;
+  
+  displayCartItems(carts);
+} 
+
+const displayTotal = () => {
+
+  let a = carts.reduce((pre, curr) => {
+
+    return pre + curr.item.price * curr.count;
+
+  }, 0)
+
+  document.getElementById("total").innerText = a;
+  console.log(a)
 }
 

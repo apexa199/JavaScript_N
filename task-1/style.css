@@ -262,3 +262,27 @@ Menu
     height: 150px;
   }
 }
+  .navbar>.container {
+
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  span{
+    position: relative;
+    top: -5px;
+  }
+  .inputchange{
+    width: 20%;
+    height: 39px;
+    border-radius: 6px;
+    border: 2px solid #dbc29b;
+    text-align: center;
+}
+.plus{
+  width: 250px;
+}
+
+ 

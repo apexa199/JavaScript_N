@@ -53,7 +53,7 @@
 
       event.preventDefault();
 
-      let obj = {};
+      let obj = [];
 
       const fieldValues = document.querySelectorAll(".form-control").forEach((v) => {
 
@@ -64,8 +64,7 @@
           obj[v.id] = v.value;
         }
       })
-
-      fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register", {
+   fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register", {
 
         method: "POST",
         body: JSON.stringify(obj),
@@ -76,10 +75,15 @@
         .then(y => y.json())
         .then(y => {
 
-          console.log(y);
+ 
+          localStorage.setItem("token",y.jwtToken);
+
+          window.location.href = "authenticate.html";
         })
+        consol.log(obj)
 
     }
+   
 
   </script>
 </body>

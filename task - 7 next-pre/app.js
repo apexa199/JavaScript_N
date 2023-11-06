@@ -38,7 +38,7 @@ const reviews = [
 
 // select items
 
-const reviewsData = [];
+let reviewsData = [];
 
 let index = 0;
 

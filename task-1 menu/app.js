@@ -195,7 +195,9 @@ const addProduct = (myindex) => {
 
   document.getElementById("dis").innerHTML = carts.length;
  
-   document.getElementById("total").value = p;
+   document.getElementById("total").value = Math.round(p);
+
+  
 
   displayCartItems(carts);
 }

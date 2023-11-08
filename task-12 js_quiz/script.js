@@ -70,6 +70,7 @@ let currentQuestion = 0;
 
 const questionElement = document.getElementById("question");
 const answerElement = document.getElementById("answers");
+
 const form = document.getElementById("quizForm");
 
  showQuestion = () => {

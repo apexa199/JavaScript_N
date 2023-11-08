@@ -76,7 +76,7 @@ const form = document.getElementById("quizForm");
 
   const currentQ = quiz[currentQuestion];
 
-  idelement.textContent = 
+
   questionElement.textContent = currentQ.questionText;
    answerElement.innerHTML = "";
 

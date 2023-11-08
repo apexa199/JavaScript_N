@@ -69,6 +69,8 @@ const searchValue = (e) => {
     let selectedCat = document.getElementById("searchCategary").value;
 
     let searchTerm = document.getElementById("searchTerm").value;
+    
+  
 
     switch (selectedCat) {
       case "start":

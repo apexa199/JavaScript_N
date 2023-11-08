@@ -8,24 +8,27 @@
 </head>
 
 <body>
-    <details ontoggle="myFunction()">
-        <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo excepturi numquam nemo, repudiandae sed
-            quos
-            assumenda eaque iure a libero saepe dignissimos? Veritatis dignissimos suscipit eos ab praesentium
-            voluptatum
-            ipsum, voluptate accusantium placeat adipisci quisquam unde aliquam. Aperiam, accusantium provident!
-            Ducimus
-            dolores a distinctio quae architecto, nisi voluptatem porro libero!</p>
-        Open the details.</p>
-        <summary>lorem is the best ...Read more</summary>
-          
-    </details>
+    <div id="dis" onclick="readMoreHandle()"></div>
 
     <script>
-        function myFunction() {
-           let data = document.getElementById("p1").slice(0,20);          
+       
+       let mystring = "this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript."
+
+        let isreadMore = true;
+
+        const readMoreHandle = () => {
+
+            if(isreadMore){
+
+               document.getElementById("dis").innerHTML = mystring.slice(0,15).concat(" ...readMore")
+            }
+            else{
+                document.getElementById("dis").innerHTML = mystring.concat(" ...readless");
+            }
+            isreadMore = !isreadMore
         }
-        
+       readMoreHandle()
+    
     </script>
 
 

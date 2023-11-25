@@ -11,7 +11,7 @@ const MultipleState = () => {
 
   return (
     <div>
-        {data.fullName}
+        {data.fullName.split(" ").map((v) => v[0]).join(".")}
         {/* {data.fristName}
         {data.lastName} */}
 

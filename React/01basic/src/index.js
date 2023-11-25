@@ -5,13 +5,17 @@ import { Counter } from './Home';
 import { APIDisplay } from './APIDisplay';
 import { FormFunction } from './FormFunction';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ECommerce } from './Ecommerce';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <MultipleState/>  
+    <ECommerce/>  
 
 
   </React.StrictMode>

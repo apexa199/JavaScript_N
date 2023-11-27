@@ -1,31 +1,34 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Edisplay } from './Edisplay1';
+import React, { useEffect, useState } from 'react'
+
+import { Edisplay1 } from './Edisplay1';
 
 
-export const Ecommerce1 = () => {
 
-  const [data,setData]  = useState([])
-  console.log(data);
+export const Ecommerce = () => {
 
-  useEffect(() => {
+   const [data,setData]= useState([])
+   console.log(data);
+
+    useEffect(()=>{
 
     axios.get("https://fakestoreapi.com/products")
-    .then(y => {
+    
+    .then(y=>{
 
-      setData(y.data);
+        setData(y.data);
+        
+    }).catch(y=>{
+        console.log(y);
+    })
 
     },[])
-
-  })
   return (
-    <>
-      {
-        data.map((v) =>{
-
-          return(<Edisplay title ={v.title}/>)
-        })
-      }
-    </>
+    <>        
+      {        
+        data.map((v)=>{
+             return ( <Edisplay1 title={v.title} price={v.price} img={v.image}/>)
+         }) }
+       </>
   )
 }

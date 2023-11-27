@@ -6,7 +6,7 @@ import { APIDisplay } from './APIDisplay';
 import { FormFunction } from './FormFunction';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ECommerce } from './Ecommerce';
+
 
 
 

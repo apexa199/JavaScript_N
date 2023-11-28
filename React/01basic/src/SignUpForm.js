@@ -1,46 +1,79 @@
-import React from 'react';
-import {Formik, Field } from 'formik';
+import { Formik, Field } from 'formik'
+import React from 'react'
 
-export const SignUpForm= () => {
-    let a = {
+export const SignUpForm = () => {
+
+    let b = {
+
         firstName: '',
         lastName: '',
         email: '',
-        password: '',
-        Confirmpassword: '',
-        acceptTerm:''
+        acceptTerm: false,
+        hobbies: [],
+        gender: '',
+        city :''
+
     }
-  return (
-    
-   <div>
-    
-    <h2>Registration Form</h2>
 
-    <Formik  initialValues={a} onSubmit={(values)=>{
+    return (
+        <div>
+            <h2>Sign Up Form</h2>
 
-        console.log(values)
-    }}>
+            <Formik initialValues={b} onSubmit={(values) => {
 
-        <form>
-            <label>FirstName</label>
-            <Field id="firstName" name="firstName" placeholder="Please Enter FirstName" /><br/><br/>
+                console.log(values)
+            }}>
 
-            <label>LastName</label>
-            <Field id="LasttName" name="LastName" placeholder="Please Enter LastName" /><br/><br/>
+                <form>
+                    <label>FirstName</label>
+                    <Field id="firstName" name="firstName" placeholder="Please Enter FirstName" /><br /><br />
 
-            <label>Email</label>
-            <Field id="Email" name="Email" placeholder="Please Enter Email" /><br/><br/>
+                    <label>LastName</label>
+                    <Field id="LasttName" name="LastName" placeholder="Please Enter LastName" /><br /><br />
 
-            <label>Password</label>
-            <Field id="Password" name="Password" placeholder="Please Enter Password" /><br/><br/>
+                    <label>Email</label>
+                    <Field id="Email" name="Email" placeholder="Please Enter Email" /><br /><br />
 
-            <label> Confirm Password</label>
-            <Field id="Confirm Password" name="Confirm Password" placeholder="Please Enter Confirm Password" /><br/><br/>          
+                    <label>
+                        <Field type="checkbox" name="acceptTerm" />
 
-            <button type="submit">Submit</button>
-        </form>
-        
-    </Formik>
-   </div> 
-   )
+                        <div role="group" aria-labelledby="checkbox-group">
+                            <label>
+                                <Field type="checkbox" name="hobbies" value=" Painting" />
+                                Painting
+                            </label>
+                            <label>
+                                <Field type="checkbox" name="hobbies" value="Adventure" />
+                                Adventure
+                            </label>
+                            <label>
+                                <Field type="checkbox" name="hobbies" value="Reading" />
+                                Reading
+                            </label>
+                        </div>
+                    </label>
+
+                    <div role="group" aria-labelledby="my-radio-group">
+                        <label>
+                            <Field type="radio" name="gender" value="Male" />
+                            Male
+                        </label>
+                        <label>
+                            <Field type="radio" name="gender" value="Female" />
+                            Female
+                        </label>
+                    </div><br />
+
+                    <Field name="city" as="select">
+                        <option value="Vadodara">Vadodara</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Banglore">Banglore</option>
+                    </Field>
+
+
+                    <button type="submit">Submit</button>
+                </form>
+            </Formik>
+        </div>
+    )
 }

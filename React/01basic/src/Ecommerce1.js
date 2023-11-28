@@ -27,7 +27,7 @@ export const Ecommerce = () => {
     <>        
       {        
         data.map((v)=>{
-             return ( <Edisplay1 title={v.title} price={v.price} img={v.image}/>)
+             return ( <Edisplay1 title={v.title} des={v.description} price={v.price} img={v.image}/>)
          }) }
        </>
   )

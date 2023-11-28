@@ -9,6 +9,8 @@ import {Ecommerce} from './Ecommerce1';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyProps from './MyProps';
 import FormInClass from './FormInClass';
+import {SignUpForm } from './SignUpForm';
+
 
 
 
@@ -18,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <FormInClass/>  
+    <Ecommerce/>  
 
 
   </React.StrictMode>

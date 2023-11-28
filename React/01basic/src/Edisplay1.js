@@ -6,8 +6,8 @@ import Card from 'react-bootstrap/Card';
 
 export const Edisplay1 = (props) => {
   return (
-    <div className='root1'>
-      <Row>
+    <div>     
+         <Row>
         <Col sm={4}>
           <Card style={{ width: '21rem' }}>
             <Card.Img style={{ width: '12.5rem', height: '12.5rem' }} variant="top" src={props.img} />

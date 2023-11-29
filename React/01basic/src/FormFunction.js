@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export const FormFunction = () => {
 
@@ -29,12 +29,12 @@ export const FormFunction = () => {
     }
 
   return (
-    <form onSubmit={saveInfo}>
+    <Form onSubmit={saveInfo}>
 
         <input type='text' name='firstName' placeholder='please enter your firstName' onChange={handleInput} />
         <input type='text' name='lastName' placeholder='please enter your lastName' onChange={handleInput} />
         <input type='submit' value="save" />
 
-    </form>
+    </Form>
   )
 }

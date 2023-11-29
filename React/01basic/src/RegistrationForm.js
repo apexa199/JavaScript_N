@@ -7,7 +7,7 @@ export const RegistrationForm = () => {
         lastName: '',
         email: '',
         password: '',
-        Confirmpassword: '',
+        confirmPassword: '',
         acceptTerm: false   
     }
   return (
@@ -26,16 +26,16 @@ export const RegistrationForm = () => {
             <Field id="firstName" name="firstName" placeholder="Please Enter FirstName" /><br/><br/>
 
             <label>LastName</label>
-            <Field id="LasttName" name="LastName" placeholder="Please Enter LastName" /><br/><br/>
+            <Field id="lastName" name="lastName" placeholder="Please Enter LastName" /><br/><br/>
 
             <label>Email</label>
-            <Field id="Email" name="Email" placeholder="Please Enter Email" /><br/><br/>
+            <Field id="email" name="email" placeholder="Please Enter Email" /><br/><br/>
 
             <label>Password</label>
-            <Field id="Password" name="Password" placeholder="Please Enter Password" /><br/><br/>
+            <Field id="password" name="password" placeholder="Please Enter Password" /><br/><br/>
 
             <label> Confirm Password</label>
-            <Field id="Confirm Password" name="Confirm Password" placeholder="Please Enter Confirm Password" /><br/><br/>          
+            <Field id="confirmPassword" name="confirmPassword" placeholder="Please Enter Confirm Password" /><br/><br/>          
 
             <label>
             <Field type="checkbox" name="acceptTerm" />

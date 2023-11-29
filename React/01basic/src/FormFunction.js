@@ -29,12 +29,12 @@ export const FormFunction = () => {
     }
 
   return (
-    <Form onSubmit={saveInfo}>
+    <form onSubmit={saveInfo}>
 
         <input type='text' name='firstName' placeholder='please enter your firstName' onChange={handleInput} />
         <input type='text' name='lastName' placeholder='please enter your lastName' onChange={handleInput} />
         <input type='submit' value="save" />
 
-    </Form>
+    </form>
   )
 }

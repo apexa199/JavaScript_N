@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Field } from 'formik';
+import {Formik, Field, Form } from 'formik';
 
 export const RegistrationForm = () => {
     let a = {
@@ -21,7 +21,7 @@ export const RegistrationForm = () => {
         console.log(values)
     }}>
 
-        <form>
+        <Form>
             <label>FirstName</label>
             <Field id="firstName" name="firstName" placeholder="Please Enter FirstName" /><br/><br/>
 
@@ -41,7 +41,7 @@ export const RegistrationForm = () => {
             <Field type="checkbox" name="acceptTerm" />
             </label>
             <button type="submit">Submit</button>
-        </form>
+        </Form>
         
     </Formik>
    </div> 

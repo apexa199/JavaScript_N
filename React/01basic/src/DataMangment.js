@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MyMangment } from './Component/MyMangment';
 
 
 export const DataMangment = () => {
@@ -63,7 +64,7 @@ const editInfo = (index) => {
             <input type='text' name='lastName'  onChange={changeValue} value={data.lastName}/><br/><br/>
             <label name='address'>Address :</label>
            
-            <select onChange={changeValue} value={data.address}>
+            <select onChange={changeValue} value={data.address.city}>
                <option value="Vadodara">Vadodara</option>
                 <option value="Pune">Pune</option>
                 <option value="Banglore">Banglore</option>
@@ -74,18 +75,10 @@ const editInfo = (index) => {
             <input type='submit' value='save'/>
         </form>
 
-        <table>
-            {
-                multipleData.map((v,index) => {
-
-                    return(<tr><td>{v.firstName}</td>
-                    <td>{v.lastName}</td>
-                    <td>{v.address && v.address.map((multipleData) => (<td>{multipleData.city}</td>))}</td>
-                    <td><button onClick={() => {deleteInfo(index)}}>Delete</button></td>
-                    <td><button onClick={() => {editInfo(index)}}>Edit</button></td></tr>)
-                })
-            }
-        </table>
+        <MyMangment multipleData ={multipleData} 
+        deleteInfo = {deleteInfo}
+        editInfo = {editInfo}
+        />
     </div>
   )
 }

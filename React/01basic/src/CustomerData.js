@@ -17,22 +17,25 @@ export default function CustomerData() {
 
         return Yup.object().shape({
             fullname: Yup.string().required('Fullname is required'),
+            
             username: Yup.string()
                 .required('Username is required')
                 .min(6, 'Username must be at least 6 characters')
                 .max(20, 'Username must not exceed 20 characters'),
+
             email: Yup.string()
                 .required('Email is required')
                 .email('Email is invalid')
-                .matches(
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-                    'Must contain at least one lowercase letter, one uppercase letter, and one number'
-                  ),
-
+                .matches(/[0-9]/, 'email requires a number')
+                .matches(/[a-z]/, 'email requires a lowercase letter')
+                .matches(/[A-Z]/, 'email requires an uppercase letter')
+                .matches(/[^\w]/, 'email requires a symbol'),
+                
             password: Yup.string()
                 .required('Password is required')
                 .min(6, 'Password must be at least 6 characters')
                 .max(40, 'Password must not exceed 40 characters'),
+
             confirmPassword: Yup.string()
                 .required('Confirm Password is required')
                 .oneOf([Yup.ref('password'), null], 'Confirm Password does not match'),

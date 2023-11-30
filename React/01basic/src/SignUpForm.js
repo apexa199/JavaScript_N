@@ -1,9 +1,10 @@
-import { Formik, Field ,Form} from 'formik'
-import React from 'react'
+import { Formik, Field ,Form} from 'formik';
+import * as Yup from 'yup';
+import React from 'react';
 
 export const SignUpForm = () => {
 
-    let b = {
+    let a = {
 
         firstName: '',
         lastName: '',
@@ -15,11 +16,50 @@ export const SignUpForm = () => {
 
     }
 
+    const  validateSingUp = empData => {
+
+    const errors = {};
+    
+    if (!empData.firstName) {
+      errors.firstName = 'Please Enter firstName';
+    } else if (empData.firstName.length > 20) {
+      errors.firstName = 'Name cannot exceed 20 characters';
+    }
+    if (!empData.lastName) {
+        errors.lastName = 'Please Enter firstName';
+      } else if (empData.lastName.length > 20) {
+        errors.lastName = 'Name cannot exceed 20 characters';
+      }
+
+    if (!empData.email) {
+      errors.email = 'Please Enter firstName';
+    } else if (empData.email.length > 20) {
+      errors.email = 'Invalid email address';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(empData.email)) {
+    errors.email = 'Invalid email address';
+  }
+
+    if (!empData.password) {
+        errors.password = 'Please Enter firstName';
+      } else if (empData.password.length > 20) {
+        errors.password = 'Name cannot exceed 20 characters';
+      }else if(Yup.object().shape({password: Yup.string().min(8, 'Password must be 8 characters long')
+      .matches(/[0-9]/, 'Password requires a number')
+      .matches(/[a-z]/, 'Password requires a lowercase letter')
+      .matches(/[A-Z]/, 'Password requires an uppercase letter')
+      .matches(/[^\w]/, 'Password requires a symbol')})){
+        errors.password="Invalid Password"
+      }
+    
+  
+    return errors;
+  };
+
     return (
         <div>
             <h2>Sign Up Form</h2>
 
-            <Formik initialValues={b} onSubmit={(values) => {
+            <Formik initialValues={a} validate={validateSingUp} onSubmit={(values) => {
 
                 console.log(values)
             }}>

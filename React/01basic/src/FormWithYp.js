@@ -34,8 +34,12 @@ export default function CustomerData() {
             password: Yup.string()
                 .required('Password is required')
                 .min(6, 'Password must be at least 6 characters')
-                .max(40, 'Password must not exceed 40 characters'),
-
+                .max(40, 'Password must not exceed 40 characters')
+                .matches(/[0-9]/, 'email requires a number')
+                .matches(/[a-z]/, 'email requires a lowercase letter')
+                .matches(/[A-Z]/, 'email requires an uppercase letter')
+                .matches(/[^\w]/, 'email requires a symbol'),
+                
             confirmPassword: Yup.string()
                 .required('Confirm Password is required')
                 .oneOf([Yup.ref('password'), null], 'Confirm Password does not match'),

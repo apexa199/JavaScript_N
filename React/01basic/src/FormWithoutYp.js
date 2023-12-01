@@ -1,9 +1,11 @@
 import { Formik, Field ,Form, ErrorMessage} from 'formik';
 
-import React from 'react';
+import React, { useRef } from 'react';
 
 export const SignUpForm = () => {
 
+    const firstNameRef = useRef(null);
+    
     let a = {
 
         firstName: '',
@@ -65,7 +67,7 @@ export const SignUpForm = () => {
 
                 <Form>
                     <label>FirstName</label>
-                    <Field id="firstName" name="firstName" placeholder="Please Enter FirstName" />
+                    <Field id="firstName" name="firstName" innerRef={firstNameRef} placeholder="Please Enter FirstName" />
                     <ErrorMessage name='firstName'/>
                     <br /><br />
 

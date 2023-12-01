@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 const NavbarComponent = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="mb-3">
       <Container>
         <Navbar.Brand href="#home">Your Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

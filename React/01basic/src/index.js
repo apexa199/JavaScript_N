@@ -9,10 +9,10 @@ import {Ecommerce} from './Ecommerce1';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyProps from './MyProps';
 import FormInClass from './FormInClass';
-import {SignUpForm } from './SignUpForm';
+import {SignUpForm } from './FormWithoutYp';
 import { RegistrationForm } from './RegistrationForm';
 import { DataMangment } from './DataMangment';
-import CustomerData from './CustomerData';
+import CustomerData from './FormWithYp'
 
 
 

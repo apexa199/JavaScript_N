@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Edisplay1 } from './Edisplay1';
-import { NavBarComponent} from './Component/NavBarComponent'
+import NavBarComponent from './NavBarComponent'
 
 
 

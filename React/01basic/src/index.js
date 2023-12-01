@@ -13,6 +13,7 @@ import {SignUpForm } from './FormWithoutYp';
 import { RegistrationForm } from './RegistrationForm';
 import { DataMangment } from './DataMangment';
 import CustomerData from './FormWithYp'
+import { FormWithBootstrap } from './FormWithBootstrap';
 
 
 
@@ -23,7 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-<Ecommerce/>
+<FormWithBootstrap/>
       
   </React.StrictMode>
 );

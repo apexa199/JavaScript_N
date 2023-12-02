@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 export default function CustomerData() {
 
     const d = {
-        fullname: '',
-        username: '',
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -17,14 +17,11 @@ export default function CustomerData() {
 
         return Yup.object().shape({
             firstName: Yup.string()
-            .required('firstName is required')
-            .min(6, 'firstName must be at least 6 characters')
-            .max(20, 'firstName must not exceed 20 characters'),
-            
+            .required('firstName is required'),
+         
             lastName: Yup.string()
-                .required('lastName is required')
-                .min(6, 'lastName must be at least 6 characters')
-                .max(20, 'lastName must not exceed 20 characters'),
+                .required('lastName is required'),
+                
 
             email: Yup.string()
                 .required('Email is required')
@@ -66,20 +63,20 @@ export default function CustomerData() {
             <Form>
 
                 <div className="form-group">
-                    <label>Full Name</label>
-                    <Field name="fullname" type="text" className="form-control" />
+                <label htmlFor="text"> FirstName </label>
+                    <Field name="text" type="text" className="form-control" />
                     <ErrorMessage
-                        name="fullname"
+                        name="firstName"
                         component="div"
                         className="text-danger"
                     />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="username"> Username </label>
-                    <Field name="username" type="text" className="form-control" />
+                    <label htmlFor="text"> LastName </label>
+                    <Field name="text" type="text" className="form-control" />
                     <ErrorMessage
-                        name="username"
+                        name="lastName"
                         component="div"
                         className="text-danger"
                     />

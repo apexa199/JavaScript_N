@@ -1,10 +1,11 @@
 import { Formik, Field ,Form, ErrorMessage} from 'formik';
-
 import React, { useRef } from 'react';
+
 
 export const SignUpForm = () => {
 
-    const firstNameRef = useRef(null);
+    const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);    
     
     let a = {
 
@@ -43,17 +44,21 @@ export const SignUpForm = () => {
 
     if (!empData.password) {
         errors.password = 'Please Enter password';
+        passwordRef.current.focus();
       } else if( !/(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]/.test(empData.password)){
-        errors.password = 'Password must contain at least 1 capital letter, 1 small letter, 1 symbol, and 1 number';}
+        errors.password = 'Password must contain at least 1 capital letter, 1 small letter, 1 symbol, and 1 number';
+        passwordRef.current.focus();}
 
-    if (!empData.password) {
+    if (!empData.confirmPassword) {
         errors.confirmPassword = 'Confirm Password is required';
-        }  else if (values.password !== values.confirmPassword) {
+        confirmPasswordRef.current.focus();
+        }  else if (empData.password !== empData.confirmPassword) {
             errors.confirmPassword = 'Passwords do not match';
+            confirmPasswordRef.current.focus();}
      
     
   
-    return errors;}
+    return errors;
   };
 
     return (
@@ -67,7 +72,7 @@ export const SignUpForm = () => {
 
                 <Form>
                     <label>FirstName</label>
-                    <Field id="firstName" name="firstName" innerRef={firstNameRef} placeholder="Please Enter FirstName" />
+                    <Field id="firstName"  name="firstName" placeholder="Please Enter FirstName" />
                     <ErrorMessage name='firstName'/>
                     <br /><br />
 
@@ -76,15 +81,15 @@ export const SignUpForm = () => {
                     <ErrorMessage name='lastName'/><br /><br />
 
                     <label>Email</label>
-                    <Field id="email" name="email" placeholder="Please Enter Email" />
+                    <Field id="email"  name="email" placeholder="Please Enter Email" />
                     <ErrorMessage name='email'/><br /><br />
 
                     <label>Password</label>
-                    <Field id="password" name="password" placeholder="Please Enter password" />
+                    <Field id="password"  name="password" placeholder="Please Enter password" innerRef={passwordRef} />
                     <ErrorMessage name='password'/><br /><br />
 
                     <label>confirmPassword</label>
-                    <Field id="confirmPassword" name="confirmPassword" placeholder="Please Enter confirmPassword" />
+                    <Field id="confirmPassword" name="confirmPassword" placeholder="Please Enter confirmPassword" innerRef={confirmPasswordRef} />
                     <ErrorMessage name='confirmPassword'/><br /><br />
 
                     <label>

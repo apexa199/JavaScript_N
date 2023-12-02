@@ -16,12 +16,15 @@ export default function CustomerData() {
     const validation = () => {
 
         return Yup.object().shape({
-            fullname: Yup.string().required('Fullname is required'),
+            firstName: Yup.string()
+            .required('firstName is required')
+            .min(6, 'firstName must be at least 6 characters')
+            .max(20, 'firstName must not exceed 20 characters'),
             
-            username: Yup.string()
-                .required('Username is required')
-                .min(6, 'Username must be at least 6 characters')
-                .max(20, 'Username must not exceed 20 characters'),
+            lastName: Yup.string()
+                .required('lastName is required')
+                .min(6, 'lastName must be at least 6 characters')
+                .max(20, 'lastName must not exceed 20 characters'),
 
             email: Yup.string()
                 .required('Email is required')
@@ -43,6 +46,7 @@ export default function CustomerData() {
             confirmPassword: Yup.string()
                 .required('Confirm Password is required')
                 .oneOf([Yup.ref('password'), null], 'Confirm Password does not match'),
+
             acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required'),
         });
 
@@ -142,8 +146,7 @@ export default function CustomerData() {
                     <button
                         type="button"
 
-                        className="btn btn-warning float-right"
-                    >
+                        className="btn btn-warning float-right">
                         Reset
                     </button>
                 </div>

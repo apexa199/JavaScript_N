@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import * as Yup from 'yup';
+import './index.css';
 
 
 export const FormWithBootstrap = () => {
@@ -19,8 +20,6 @@ export const FormWithBootstrap = () => {
                 .required('lastName is required')
                 .min(6, 'lastName must be at least 6 characters')
                 .max(20, 'lastName must not exceed 20 characters'),
-
-
         });
 
     }
@@ -65,8 +64,7 @@ export const FormWithBootstrap = () => {
                                     className={(touched.firstName) && errors.firstName ? "error" : null}
                                 />
                                 <Form.Text className="text-muted">
-                                    {touched.firstName && errors.firstName ? (
-                                        <div className="error-message">{errors.firstName}</div>
+                                    {touched.firstName && errors.firstName ? (<div className="error-message">{errors.firstName}</div>
                                     ) : null}
                                 </Form.Text>
                             </Form.Group>

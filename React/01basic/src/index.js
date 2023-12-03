@@ -14,6 +14,7 @@ import { RegistrationForm } from './RegistrationForm';
 import { DataMangment } from './DataMangment';
 import CustomerData from './FormWithYp'
 import { FormWithBootstrap } from './FormWithBootstrap';
+import { FormWithUseFormik } from './FormWithUseFormik';
 
 
 
@@ -24,8 +25,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-<SignUpForm/>
-      
+<RegistrationForm/>
+
   </React.StrictMode>
 );
 

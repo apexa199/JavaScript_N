@@ -17,7 +17,7 @@ export default function CustomerData() {
 
         return Yup.object().shape({
             firstName: Yup.string()
-            .required('firstName is required'),
+            .required('First Name is Required!'),
          
             lastName: Yup.string()
                 .required('lastName is required'),
@@ -62,9 +62,9 @@ export default function CustomerData() {
 
             <Form>
 
-                <div className="form-group">
-                <label htmlFor="text"> FirstName </label>
-                    <Field name="text" type="text" className="form-control" />
+                <div className="form-group m-3">
+             
+                    <Field name="text" type="text" placeholder = "First Name*" className="form-control" />
                     <ErrorMessage
                         name="firstName"
                         component="div"
@@ -73,8 +73,8 @@ export default function CustomerData() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="text"> LastName </label>
-                    <Field name="text" type="text" className="form-control" />
+                
+                    <Field name="text" type="text" placeholder = "Last Name*" className="form-control" />
                     <ErrorMessage
                         name="lastName"
                         component="div"
@@ -83,8 +83,8 @@ export default function CustomerData() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="email"> Email </label>
-                    <Field name="email" type="email" className="form-control" />
+                    
+                    <Field name="email" type="email" placeholder = "Email Address*" className="form-control" />
                     <ErrorMessage
                         name="email"
                         component="div"
@@ -93,12 +93,8 @@ export default function CustomerData() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="password"> Password </label>
-                    <Field
-                        name="password"
-                        type="password"
-                        className="form-control"
-                    />
+                  
+                    <Field name="password" type="password" className="form-control" placeholder = "Password*"/>
                     <ErrorMessage
                         name="password"
                         component="div"
@@ -107,11 +103,12 @@ export default function CustomerData() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="confirmPassword"> Confirm Password </label>
+                    
                     <Field
                         name="confirmPassword"
                         type="password"
                         className="form-control"
+                        placeholder = "Confirm Password*"
                     />
                     <ErrorMessage
                         name="confirmPassword"
@@ -127,7 +124,7 @@ export default function CustomerData() {
                         className="form-check-input"
                     />
                     <label htmlFor="acceptTerms" className="form-check-label">
-                        I have read and agree to the Terms
+                        Remember me
                     </label>
                     <ErrorMessage
                         name="acceptTerms"

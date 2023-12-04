@@ -60,17 +60,18 @@ const editInfo = (index) => {
   return (
     <div>
         <form onSubmit={saveInfo}>
-            <input type='text' name='firstName' onChange={changeValue} value={data.firstName} /><br/><br/>
-            <input type='text' name='lastName'  onChange={changeValue} value={data.lastName}/><br/><br/>
+            <input type='text' name='firstName' placeholder="Enter First Name" onChange={changeValue} value={data.firstName} /><br/><br/>
+            <input type='text' name='lastName' placeholder="Enter Last Name" onChange={changeValue} value={data.lastName}/><br/><br/>
             <label name='address'>Address :</label>
            
-            <select onChange={changeValue} value={data.address.city}>
+            <select onChange={changeValue} name='address' value={data.address.city}>
+            <option value="">City</option>
                <option value="Vadodara">Vadodara</option>
                 <option value="Pune">Pune</option>
                 <option value="Banglore">Banglore</option>
             </select>
-            <input type='number' name='address' onChange={changeValue} value={data.address.pincode} />
-            <input type='text' name='address' onChange={changeValue} value={data.address.state} /><br/><br/>
+            <input type='number' name='address'placeholder="Enter Pincode Number" onChange={changeValue} value={data.address.pincode} />
+            <input type='text' name='address' placeholder="Enter State" onChange={changeValue} value={data.address.state} /><br/><br/>
 
             <input type='submit' value='save'/>
         </form>

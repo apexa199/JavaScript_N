@@ -16,9 +16,7 @@ import CustomerData from './FormWithYp'
 import { FormWithBootstrap } from './FormWithBootstrap';
 import { FormWithUseFormik } from './FormWithUseFormik';
 import { Login } from './Login';
-
-
-
+import './axios/global';
 
 
 

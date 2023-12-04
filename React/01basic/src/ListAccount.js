@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
+import fetchauth from './axios/customaxios';
 
 
 export const ListAccount = () => {
@@ -9,12 +10,9 @@ export const ListAccount = () => {
     let d = JSON.parse(localStorage.getItem("token"));
 
     useEffect(() => {
-        axios.get("https://real-pear-fly-kilt.cyclic.app/accounts",{
-            headers:{
-                'Content-Type':'application/json',
-                'Authorization' :`bearer ${d?.jwtToken}`
-            }
-            }).then(y => {
+      
+        fetchauth.get("/accounts")
+        .then(y => {
               console.log(y.data)
             })
     } ,[])

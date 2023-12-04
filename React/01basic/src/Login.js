@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ListAccount } from './ListAccount';
 import axios from 'axios';
+import fetchauth from './axios/customaxios';
 
 export const Login = () => {
 
@@ -14,7 +15,7 @@ export const Login = () => {
 
         e.preventDefault();
 
-        axios.post("https://real-pear-fly-kilt.cyclic.app/accounts/authenticate",data)
+        fetchauth.post("/accounts/authenticate",data)
         .then(y =>{
           localStorage.setItem("token",JSON.stringify(y.data))
           console.log(y.data);

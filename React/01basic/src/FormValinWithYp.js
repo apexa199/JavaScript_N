@@ -20,7 +20,7 @@ export default function CustomerData() {
             .required('First Name is Required!'),
          
             lastName: Yup.string()
-                .required('lastName is required'),
+                .required('Last Name is required'),
                 
 
             email: Yup.string()
@@ -72,7 +72,7 @@ export default function CustomerData() {
                     />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group m-3">
                 
                     <Field name="text" type="text" placeholder = "Last Name*" className="form-control" />
                     <ErrorMessage
@@ -82,7 +82,7 @@ export default function CustomerData() {
                     />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group m-3">
                     
                     <Field name="email" type="email" placeholder = "Email Address*" className="form-control" />
                     <ErrorMessage
@@ -92,7 +92,7 @@ export default function CustomerData() {
                     />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group m-3">
                   
                     <Field name="password" type="password" className="form-control" placeholder = "Password*"/>
                     <ErrorMessage
@@ -102,7 +102,7 @@ export default function CustomerData() {
                     />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group m-3">
                     
                     <Field
                         name="confirmPassword"
@@ -117,7 +117,7 @@ export default function CustomerData() {
                     />
                 </div>
 
-                <div className="form-group form-check">
+                <div className="form-group form-check m-3">
                     <Field
                         name="acceptTerms"
                         type="checkbox"
@@ -133,7 +133,7 @@ export default function CustomerData() {
                     />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group m-3">
                     <button type="submit" className="btn btn-primary">
                         Register
                     </button>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
-import fetchauth from './axios/customaxios';
+import authfetch1 from './axios/interceptor';
+
 
 
 export const ListAccount = () => {
@@ -11,7 +12,7 @@ export const ListAccount = () => {
 
     useEffect(() => {
       
-        fetchauth.get("/accounts")
+       authfetch1.get("/accounts")
         .then(y => {
               console.log(y.data)
             })

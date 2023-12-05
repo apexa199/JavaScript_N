@@ -9,14 +9,14 @@ import {Ecommerce} from './Ecommerce1';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyProps from './MyProps';
 import FormInClass from './FormInClass';
-import {SignUpForm } from './FormWithoutYp';
+import {SignUpForm } from './FormValidnWithoutYp';
 import { RegistrationForm } from './RegistrationForm';
 import { DataMangment } from './DataMangment';
-import CustomerData from './FormWithYp'
+import CustomerData from './FormValinWithYp'
 import { FormWithBootstrap } from './FormWithBootstrap';
 import { FormWithUseFormik } from './FormWithUseFormik';
 import { Login } from './Login';
-import './axios/global';
+
 
 
 
@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-<DataMangment/>
+<Login/>
 
   </React.StrictMode>
 );

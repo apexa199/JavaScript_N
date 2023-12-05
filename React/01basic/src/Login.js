@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ListAccount } from './ListAccount';
 import axios from 'axios';
-import fetchauth from './axios/customaxios';
+import authfetch1 from './axios/interceptor';
 
 export const Login = () => {
 
@@ -15,7 +15,7 @@ export const Login = () => {
 
         e.preventDefault();
 
-        fetchauth.post("/accounts/authenticate",data)
+        authfetch1.post("/accounts/authenticate",data)
         .then(y =>{
           localStorage.setItem("token",JSON.stringify(y.data))
           console.log(y.data);

@@ -1,49 +1,185 @@
 import React from 'react';
-import {Formik, Field, Form } from 'formik';
+import { Formik } from 'formik';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import * as Yup from 'yup';
+import './index.css';
+import NavbarComponent from './NavBarComponent';
+import { Col, Row } from 'react-bootstrap';
 
 export const RegistrationForm = () => {
+
+    const validation = () => {
+
+        return Yup.object().shape({
+
+            firstName: Yup.string()
+                .required('Please Enter Your First Name!'),
+
+            lastName: Yup.string()
+                .required('Please Enter Your Last Name!'),
+
+            email: Yup.string()
+                .required('Please Enter Your Email!')
+                .email('Email is invalid')
+                .matches(/[0-9]/, 'email requires a number')
+                .matches(/[a-z]/, 'email requires a lowercase letter')
+                .matches(/[A-Z]/, 'email requires an uppercase letter')
+                .matches(/[^\w]/, 'email requires a symbol'),
+
+
+            password: Yup.string()
+                .required('Please Enter Your Password!')
+                .min(6, 'Password must be at least 6 characters')
+                .max(40, 'Password must not exceed 40 characters')
+                .matches(/[0-9]/, 'email requires a number')
+                .matches(/[a-z]/, 'email requires a lowercase letter')
+                .matches(/[A-Z]/, 'email requires an uppercase letter')
+                .matches(/[^\w]/, 'email requires a symbol'),
+
+            confirmPassword: Yup.string()
+                .required('Please Enter Your Confirm Password!')
+
+        });
+
+    }
+
     let a = {
         firstName: '',
         lastName: '',
         email: '',
         password: '',
         confirmPassword: '',
-        acceptTerm: false   
+        acceptTerm: false
     }
-  return (
-    
-   <div>
-    
-    <h2>Registration Form</h2>
+    return (
+        <>
+            <div className='container'>
 
-    <Formik  initialValues={a} onSubmit={(values)=>{
+                <h2 className='text-center'>Sign In</h2>
 
-        console.log(values)
-    }}>
+                <Formik initialValues={a}
 
-        <Form>
-            <label>FirstName</label>
-            <Field id="firstName" name="firstName" placeholder="Please Enter FirstName" /><br/><br/>
+                    validationSchema={validation}
 
-            <label>LastName</label>
-            <Field id="lastName" name="lastName" placeholder="Please Enter LastName" /><br/><br/>
+                    onSubmit={(values, { setSubmitting }) => {
 
-            <label>Email</label>
-            <Field id="email" name="email" placeholder="Please Enter Email" /><br/><br/>
+                        setSubmitting(true);
+                        console.log(values)
+                    }}>
 
-            <label>Password</label>
-            <Field id="password" name="password" placeholder="Please Enter Password" /><br/><br/>
 
-            <label> Confirm Password</label>
-            <Field id="confirmPassword" name="confirmPassword" placeholder="Please Enter Confirm Password" /><br/><br/>          
+                    {
+                        ({ values,
+                            errors,
+                            touched,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit,
+                            isSubmitting }) => (
 
-            <label>
-            <Field type="checkbox" name="acceptTerm" />
-            </label>
-            <button type="submit">Submit</button>
-        </Form>
-        
-    </Formik>
-   </div> 
-   )
+                            <Form onSubmit={handleSubmit} className='m-auto'>
+                                {console.log(errors)}
+
+                                <Form.Select as={Row} className='mb-4' aria-label="Default select example">
+                                    <Col sm={4}>
+                                    <option>Title</option>
+                                    <option value="1">mr</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                    </Col>
+                                </Form.Select>
+
+                                <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
+                                    <Col sm={4}>
+                                        <Form.Control type="text" placeholder="First Name*"
+                                            name='firstName'
+                                            value={values.firstName}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={(touched.firstName) && errors.firstName ? "error" : null}
+                                        />
+                                    </Col>
+                                    <Form.Text className="text-muted">
+                                        {touched.firstName && errors.firstName ? (<div className="error-message">{errors.firstName}</div>
+                                        ) : null}
+                                    </Form.Text>
+                                </Form.Group>
+
+                                <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
+                                    <Col sm={4}>
+                                        <Form.Control type="text" placeholder="Last Name*"
+                                            name='lastName'
+                                            value={values.lastName}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={(touched.lastName) && errors.lastName ? "error" : null}
+                                        />
+                                    </Col>
+                                    <Form.Text className="text-muted">
+                                        {touched.lastName && errors.lastName ? (<div className="error-message">{errors.lastName}</div>
+                                        ) : null}
+                                    </Form.Text>
+                                </Form.Group>
+
+                                <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
+                                    <Col sm={4}>
+                                        <Form.Control type="text" placeholder="Email Address*"
+                                            name='email'
+                                            value={values.email}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={(touched.email) && errors.email ? "error" : null}
+                                        />
+                                    </Col>
+                                    <Form.Text className="text-muted">
+                                        {touched.email && errors.email ? (<div className="error-message">{errors.email}</div>
+                                        ) : null}
+                                    </Form.Text>
+                                </Form.Group>
+
+                                <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
+                                    <Col sm={4}>
+                                        <Form.Control type="text" placeholder="Password*"
+                                            name='password'
+                                            value={values.password}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={touched.password && errors.password ? "error" : null}
+                                        />
+                                    </Col>
+                                    <Form.Text className="text-muted">
+                                        {touched.password && errors.password ? (
+                                            <div className="error-message">{errors.password}</div>
+                                        ) : null}
+                                    </Form.Text>
+                                </Form.Group>
+
+                                <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
+                                    <Col sm={4}>
+                                        <Form.Control type="text" placeholder="Confirm Password*"
+                                            name='confirmPassword'
+                                            value={values.confirmPassword}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            className={touched.confirmPassword && errors.confirmPassword ? "error" : null}
+                                        />
+                                    </Col>
+                                    <Form.Text className="text-muted">
+                                        {touched.confirmPassword && errors.confirmPassword ? (
+                                            <div className="error-message">{errors.confirmPassword}</div>
+                                        ) : null}
+                                    </Form.Text>
+                                </Form.Group>
+
+                                <input className="btn btn-primary mb-2 addcenter" type="submit" value="SIGN IN" />
+                            </Form>
+
+                        )
+                    }
+
+                </Formik>
+            </div>
+        </>
+    )
 }

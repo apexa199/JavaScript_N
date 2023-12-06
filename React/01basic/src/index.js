@@ -13,7 +13,7 @@ import {SignUpForm } from './FormValidnWithoutYp';
 import { RegistrationForm } from './RegistrationForm';
 import { DataMangment } from './DataMangment';
 import CustomerData from './FormValinWithYp'
-import { LogInForm } from './LogInForm';
+import { LogInForm1 } from './LogInForm1';
 import { FormWithUseFormik } from './FormWithUseFormik';
 import { Login } from './Login';
 
@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-<LogInForm/>
+<LogInForm1/>
 
   </React.StrictMode>
 );

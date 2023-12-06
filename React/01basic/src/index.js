@@ -16,6 +16,8 @@ import CustomerData from './FormValinWithYp'
 import { LogInForm1 } from './LogInForm1';
 import { FormWithUseFormik } from './FormWithUseFormik';
 import { Login } from './Login';
+import { BrowserRouter } from "react-router-dom";
+import { LogInNav } from './Component/LogInNav';
 
 
 
@@ -23,8 +25,9 @@ import { Login } from './Login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-<RegistrationForm/>
+    <BrowserRouter>
+<LogInNav/>
+</BrowserRouter>
 
   </React.StrictMode>
 );

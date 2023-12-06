@@ -69,7 +69,7 @@ export const LogInForm1 = () => {
                             
                             <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
                             <Col sm={4}>
-                                <Form.Control type="text" placeholder="Email Address*"
+                                <Form.Control type="text" placeholder="Email Address"
                                     name='email'
                                     value={values.email}
                                     onChange={handleChange}
@@ -85,7 +85,7 @@ export const LogInForm1 = () => {
 
                             <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
                             <Col sm={4}>
-                                <Form.Control type="text" placeholder="Password*"
+                                <Form.Control type="text" placeholder="Password"
                                     name='password'
                                     value={values.password}
                                     onChange={handleChange}
@@ -100,6 +100,8 @@ export const LogInForm1 = () => {
                                 </Form.Text>
                             </Form.Group>
 
+                            
+
 
                             <input className="btn btn-primary mb-2 addcenter" type="submit" value="LOGIN IN" />
                         </Form>
@@ -109,7 +111,7 @@ export const LogInForm1 = () => {
 
 
             </Formik>
-            <p className="text-danger">Forgot Password?</p>
+            <p className="text-primary">Forgot Password?</p>
             </div>
         </>
     )

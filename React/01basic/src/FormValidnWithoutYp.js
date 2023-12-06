@@ -122,12 +122,12 @@ export const SignUpForm = () => {
                         </label>
                     </div><br />
 
-                    <Field name="city" as="select">
-                        <option value="Vadodara">Vadodara</option>
-                        <option value="Pune">Pune</option>
-                        <option value="Banglore">Banglore</option>
-                    </Field>
-                    <ErrorMessage name='city'/>
+                      <Field name="city" as="select">
+                          <option value="Vadodara">Vadodara</option>
+                          <option value="Pune">Pune</option>
+                          <option value="Banglore">Banglore</option>
+                      </Field>
+                      <ErrorMessage name='city'/>
 
 
                     <button type="submit">Submit</button>

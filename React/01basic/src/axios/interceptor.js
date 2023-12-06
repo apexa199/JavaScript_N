@@ -4,7 +4,7 @@ let d = JSON.parse(localStorage.getItem("token"));
 
 const authfetch1 = axios.create({
 
-    baseURL : "https://real-pear-fly-kilt.cyclic.app"
+    baseURL : "https://real-pear-fly-kilt.cyclic.app/"
 })
 
 authfetch1.interceptors.request.use((request) => {
@@ -14,15 +14,16 @@ authfetch1.interceptors.request.use((request) => {
     request.headers["Content-Type"] = `Application/json`;
 
     return request;
+    
+},(errow) => {
 
-},(error) => {
-
-    return Promise.reject(error);
+    return Promise.reject(errow);
 })
 
 authfetch1.interceptors.response.use((response) => {
 
     return response;
+    
 
 },(error) => {
 

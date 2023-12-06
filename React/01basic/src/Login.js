@@ -3,6 +3,7 @@ import { ListAccount } from './ListAccount';
 import axios from 'axios';
 import authfetch1 from './axios/interceptor';
 
+
 export const Login = () => {
 
    const [data,setData] =  useState({
@@ -15,11 +16,14 @@ export const Login = () => {
 
         e.preventDefault();
 
-        authfetch1.post("/accounts/authenticate",data)
+        authfetch1.post("accounts/authenticate",data)
         .then(y =>{
+
           localStorage.setItem("token",JSON.stringify(y.data))
           console.log(y.data);
+          
         }).catch(u => {
+
           console.log(u)
         })
     }
@@ -36,6 +40,8 @@ export const Login = () => {
          <input type='text' name='password' value={data.password} onChange={handleInput}/>
          <input type='submit' value="save" />
     </form>
+
+   
     </>
   )
 }

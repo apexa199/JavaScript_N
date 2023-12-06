@@ -1,8 +1,11 @@
 
 .error {
-    border: 2px solid #FF6565 !important;
+    border: 2px solid #FF6565;
   }
   .addcenter{
     width: 415px;
   
+  }
+  Nav.Link{
+    color: white;
   }

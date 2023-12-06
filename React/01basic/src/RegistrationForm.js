@@ -2,10 +2,11 @@ import React from 'react';
 import { Formik } from 'formik';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import * as Yup from 'yup';
 import './index.css';
-import NavbarComponent from './NavBarComponent';
-import { Col, Row } from 'react-bootstrap';
+
 
 export const RegistrationForm = () => {
 
@@ -54,7 +55,7 @@ export const RegistrationForm = () => {
     }
     return (
         <>
-            <div className='container'>
+            <div className='container align-center'>
 
                 <h2 className='text-center'>Sign In</h2>
 
@@ -65,6 +66,7 @@ export const RegistrationForm = () => {
                     onSubmit={(values, { setSubmitting }) => {
 
                         setSubmitting(true);
+
                         console.log(values)
                     }}>
 
@@ -81,13 +83,13 @@ export const RegistrationForm = () => {
                             <Form onSubmit={handleSubmit} className='m-auto'>
                                 {console.log(errors)}
 
-                                <Form.Select as={Row} className='mb-4' aria-label="Default select example">
-                                    <Col sm={4}>
+                                <Form.Select as={Row} className='mb-4 addcenter' aria-label="Default select example">
+                                   
                                     <option>Title</option>
-                                    <option value="1">mr</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                    </Col>
+                                    <option value="1">Mr</option>
+                                    <option value="2">Miss</option>
+                                    <option value="3">Mrs</option>
+                                
                                 </Form.Select>
 
                                 <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
@@ -124,6 +126,7 @@ export const RegistrationForm = () => {
 
                                 <Form.Group as={Row} className="mb-4" controlId="formBasicEmail">
                                     <Col sm={4}>
+                                        
                                         <Form.Control type="text" placeholder="Email Address*"
                                             name='email'
                                             value={values.email}

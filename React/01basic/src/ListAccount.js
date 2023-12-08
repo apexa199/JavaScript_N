@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import React, { useEffect, useState } from 'react';
 import authfetch1 from './axios/interceptor';
 import fetchauth from './axios/customaxios';
@@ -23,6 +23,6 @@ export const ListAccount = () => {
             })
     } ,[])
   return (
-    <div></div>
+    <div>ListAccount</div>
   )
 }

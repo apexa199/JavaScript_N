@@ -24,11 +24,10 @@ import { LogInNav } from './Component/LogInNav';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
     <BrowserRouter>
-<LogInNav/>
+<Login/>
 </BrowserRouter>
 
-  </React.StrictMode>
 );
 

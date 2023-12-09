@@ -64,7 +64,7 @@
           obj[v.id] = v.value;
         }
       })
-   fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register", {
+      fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register", {
 
         method: "POST",
         body: JSON.stringify(obj),
@@ -75,15 +75,14 @@
         .then(y => y.json())
         .then(y => {
 
- 
-          localStorage.setItem("token",y.jwtToken);
+          console.log(y);
 
           window.location.href = "authenticate.html";
         })
-        consol.log(obj)
+      console.log(obj)
 
     }
-   
+
 
   </script>
 </body>

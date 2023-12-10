@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export const ApplicationNav = () => {
   return (
-    <Navbar bg="primary" data-bs-theme="light" className='mb-4 '>
+    <Navbar bg="primary" data-bs-theme="dark" className='mb-4'>
     <Container>
 
       <Navbar.Brand href="">

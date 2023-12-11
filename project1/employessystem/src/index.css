@@ -17,3 +17,11 @@ code {
 svg{
   color: white;
 }
+nav{
+  box-shadow: 0px 0px 10px black;
+  opacity: 0.9;
+}
+button{
+  opacity: 0.9;
+  box-shadow: 0px 2px 5px black;
+}

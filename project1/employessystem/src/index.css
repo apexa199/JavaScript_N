@@ -24,4 +24,6 @@ nav{
 button{
   opacity: 0.9;
   box-shadow: 0px 2px 5px black;
-}
+  width: 528px;
+ }
+

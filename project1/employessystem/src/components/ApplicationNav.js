@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export const ApplicationNav = () => {
   return (
-    <Navbar bg="primary" className='mb-4 fs-5'>
+    <Navbar bg="primary" className='mb-5 fs-5'>
     <Container>
 
       <Navbar.Brand href="">

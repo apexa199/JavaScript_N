@@ -1,4 +1,9 @@
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
 .error {
     border: 2px solid #FF6565;
   }
@@ -11,4 +16,17 @@
   }
   svg{
     color: white;
+  }
+  Nav{
+    box-shadow: 0px 0px 8px black;
+    opacity: 0.9
+  }
+  span{
+    color: white;
+    font-size: large;
+  }
+  button{
+    width: 490px;
+    box-shadow: 0px 2px 7px black;
+    opacity: 0.9
   }

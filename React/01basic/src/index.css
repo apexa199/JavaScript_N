@@ -3,9 +3,12 @@
     border: 2px solid #FF6565;
   }
   .addcenter{
-    width: 415px;
+    width: 630px;
   
   }
-  Nav.Link{
+  .nav-link{
+    color: white;
+  }
+  svg{
     color: white;
   }

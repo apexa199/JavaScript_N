@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import * as Yup from 'yup';
-import './index.css';
+
 
 
 export const RegistrationForm = () => {
@@ -181,7 +181,7 @@ export const RegistrationForm = () => {
                                     </Form.Text>
                                 </Form.Group>
 
-                                <input className="btn btn-primary mb-2 addcenter" type="submit" value="SIGN IN" />
+                                <Button className="btn btn-primary mb-2 addcenter" type="submit">SIGN IN</Button>
                             </Form>
 
                         )

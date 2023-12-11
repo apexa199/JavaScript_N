@@ -6,6 +6,7 @@ import authfetch from '../axioshandler/interceptor';
 
 export const RegistraionForm = () => {
 
+
   const [form, setform] = useState({
 
     title: "",
@@ -37,11 +38,11 @@ export const RegistraionForm = () => {
       authfetch.post("accounts/register",form)
       .then(y => {
 
-        console.log(y)
+        console.log(y.data)
 
-      }).catch(y => {
+        }).catch(y => {
 
-        console.log(y)
+       
       })
     }
     return (

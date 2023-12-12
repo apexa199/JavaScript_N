@@ -5,9 +5,11 @@ import authfetch from "../axioshandler/interceptor";
 import { useNavigate } from "react-router-dom";
 
 export const LogInForm = () => {
+  
   const navi = useNavigate();
 
   const [form, setform] = useState({
+
     email: "",
     password: "",
   });
@@ -18,16 +20,17 @@ export const LogInForm = () => {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     console.log(form);
 
-    authfetch
-      .post("accounts/authenticate", form)
+    authfetch.post("accounts/authenticate", form)
       .then((y) => {
         
         localStorage.setItem("userInfo", JSON.stringify(y.data));
 
         navi("/home");
+        
       })
       .catch((y) => {});
   };

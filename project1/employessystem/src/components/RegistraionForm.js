@@ -29,12 +29,15 @@ export const RegistraionForm = () => {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     console.log(form);
 
     authfetch.post("accounts/register", form)
       .then((y) => {
+
         console.log(y.data);
+        
       })
       .catch((y) => {
 

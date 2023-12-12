@@ -5,7 +5,9 @@ import authfetch from "../axioshandler/interceptor";
 
 
 export const RegistraionForm = () => {
+
   const [form, setform] = useState({
+    
     title: "",
     firstName: "",
     lastName: "",
@@ -16,23 +18,29 @@ export const RegistraionForm = () => {
   });
 
   const handleInput = (e) => {
+
     if (e.target.type === "checkbox") {
+
       setform({ ...form, [e.target.name]: e.target.checked });
-    } else {
+    } 
+    else {
       setform({ ...form, [e.target.name]: e.target.value });
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
 
-    authfetch
-      .post("accounts/register", form)
+    authfetch.post("accounts/register", form)
       .then((y) => {
         console.log(y.data);
       })
-      .catch((y) => {});
+      .catch((y) => {
+
+      });
   };
+
   return (
     <>
       <div className="text-center">

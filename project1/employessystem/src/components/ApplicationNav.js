@@ -19,7 +19,7 @@ export const ApplicationNav = () => {
       <Nav.Link as={Link} to='/home '>Home</Nav.Link>
       <Nav.Link as={Link} to='/'>Registration</Nav.Link>
         <Nav.Link as={Link} to='/login'>LogIn</Nav.Link>        
-        <Nav.Link as={Link} to='/list'>List</Nav.Link>
+       
       </Nav>
     </Container>
   </Navbar>

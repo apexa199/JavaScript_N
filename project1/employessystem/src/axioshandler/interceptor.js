@@ -8,7 +8,8 @@ const authfetch = axios.create({
 
 authfetch.interceptors.request.use((requ) => {
 
-    requ.headers["Content-Type"] = "application/json"
+    requ.headers["Content-Type"] = "application/json";
+    requ.headers["Authorization"] = "bearer " + JSON.parse(localStorage.getItem("userInfo")).jwtToken;
 
     return requ;
 
@@ -32,7 +33,8 @@ authfetch.interceptors.response.use((response) => {
                 progress: 0,
             })
         }
-        else {
+        else if (response.config.)
+        {
             toast.success(`LogIn Sucessful`, {
                 position: "top-center",
                 autoClose: false,

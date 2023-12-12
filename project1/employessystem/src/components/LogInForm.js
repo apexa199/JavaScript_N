@@ -13,6 +13,7 @@ export const LogInForm = () => {
   });
 
   const handleInput = (e) => {
+    
     setform({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -23,6 +24,7 @@ export const LogInForm = () => {
     authfetch
       .post("accounts/authenticate", form)
       .then((y) => {
+        
         localStorage.setItem("userInfo", JSON.stringify(y.data));
 
         navi("/home");

@@ -4,16 +4,23 @@ import authfetch from '../axioshandler/interceptor';
 
 export const Display1 = () => {
 
-  const[data,setData] = useState([])
+  const[data,setData] = useState([]);
+
+  const[islodded,setIsLodded] = useState(false);
 
   useEffect(() => {
 
-    authfetch.get("/accounts").then(y => {
+    setIsLodded(true);
+
+    authfetch.get("/accounts").then(y => {  
       
       setData(y.data);
+      
+      setIsLodded(false);      
 
   })
   },[])
+
   return (
     <Table striped bordered hover >
       <thead>

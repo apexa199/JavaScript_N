@@ -20,9 +20,12 @@ authfetch.interceptors.request.use((requ) => {
 
 authfetch.interceptors.response.use((response) => {
 
-    if (response.status === 200) {
+    console.log(response)
 
-        if (response.data.message) {
+    if (response.status == 200) {
+
+        if (response.data.message) 
+        {
             toast.success(`${response.data.message}`, {
                 position: "top-center",
                 autoClose: false,
@@ -33,7 +36,8 @@ authfetch.interceptors.response.use((response) => {
                 progress: 0,
             })
         }
-        else if (response.config.)
+
+        else if(response.config.url.includes("authenticate"))
         {
             toast.success(`LogIn Sucessful`, {
                 position: "top-center",
@@ -46,11 +50,27 @@ authfetch.interceptors.response.use((response) => {
             })
         }
     }
+
+    if(response.status == 400)
+    {
+        toast.error(`${response.data.message}`, {
+          position: "top-center",
+          autoClose: false,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 0,
+          });  
+
+    }
+
         return response;
 
     }, (error) => {
 
-        if (error?.response?.status === 400) {
+        if (error?.response?.status == 400) 
+        {
             toast.error(`${error.response.data.message}`, {
                 position: "top-center",
                 autoClose: false,
@@ -61,6 +81,7 @@ authfetch.interceptors.response.use((response) => {
                 progress: 0,
             });
         }
+
 
         return Promise.reject(error)
     })

@@ -129,10 +129,10 @@ export const RegistraionForm = () => {
         />
   
 
-        <Button type="submit" variant="primary" className="mt-3">
+        <Button type="submit" variant="primary" className="mt-3 button1">
           SIGN IN
         </Button>
-        <Button type="reset" variant="danger"  className="mt-3">
+        <Button type="reset" variant="danger"  className="mt-3 button1">
           RESET
         </Button>
       </Form>

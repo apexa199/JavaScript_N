@@ -9,9 +9,9 @@ const authfetch1 = axios.create({
 
 authfetch1.interceptors.request.use((request) => {
 
-    request.headers["Authorization"] = `bearer ${d?.jwtToken}`;
+    request.headers["Authorization"] = "bearer " + d.jwtToken;
 
-    request.headers["Content-Type"] = `Application/json`;
+    request.headers["Content-Type"] = "application/json";
 
     return request;
     

@@ -2,11 +2,13 @@ import React from "react";
 import { Formik , Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Col, Row,Button} from "react-bootstrap";
-import authfetch1 from "../axios/interceptor";
+import authfetch from "../axios/interceptor";
+import { useNavigate } from "react-router-dom";
 
 export const LogInForm1 = () => {
 
-  
+const navi =  useNavigate() 
+
 const validation = () => {
     return Yup.object().shape({
       email: Yup.string()
@@ -53,10 +55,12 @@ const validation = () => {
               }}
               validationSchema={validation}
               onSubmit={(values) => {
-                authfetch1.post("accounts/authenticate")
+
+                authfetch.post("accounts/authenticate",values)
                 .then(y =>{
             
                   localStorage.setItem("token",JSON.stringify(y.data))
+                  navi('/dashboard');
                   console.log(y.data);
                   
                 }).catch(u => {
@@ -64,7 +68,7 @@ const validation = () => {
                   console.log(u)
                 })
             
-                console.log(values);
+               
               }}
             >
               <Form  className="m-auto">                 

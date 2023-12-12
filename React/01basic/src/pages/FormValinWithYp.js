@@ -2,10 +2,12 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Row, Col, Button } from "react-bootstrap";
-import authfetch1 from "../axios/interceptor";
+import authfetch from "../axios/interceptor";
 
 export default function CustomerData() {
+
   const d = {
+
     title: "",
     firstName: "",
     lastName: "",
@@ -16,7 +18,10 @@ export default function CustomerData() {
   };
 
   const validation = () => {
+
     return Yup.object().shape({
+
+      title: Yup.string().required("Please Enter Title!"),
 
       firstName: Yup.string().required("Please Enter Your First Name!"),
 
@@ -68,29 +73,28 @@ export default function CustomerData() {
               initialValues={d}
               validationSchema={validation}
               onSubmit={(values) => {
-                authfetch1
+                authfetch
                   .post("accounts/register", values)
                   .then((y) => {
                     console.log(y.data);
                   })
-                  .catch((u) => {});
+                  .catch((u) => {
+                    
+                    console.log(u)
+                  });
               }}
             >
               <Form>
-                <div className="form-group m-3 ">
+              <div className="form-group m-3 ">
+                  <label>Title</label>
                   <Field
-                    name="Title"
-                    as="select"
-                    placeholder="Title"
-                    width="500px"
-                  >
-                    <option>Title</option>
-                    <option value="Mr">Mr</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Mrs">Mrs</option>
-                  </Field>
+                    name="title"
+                    type="text"
+                    placeholder="Title*"
+                    className="form-control"
+                  />
                   <ErrorMessage
-                    name="city"
+                    name="title"
                     component="div"
                     className="text-danger"
                   />

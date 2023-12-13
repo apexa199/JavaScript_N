@@ -19,9 +19,10 @@ export const GridData = () => {
     ]);
     
     useEffect(() => {     
-  
+debugger;
       authfetch.get("/accounts").then((y) => {
   
+        console.log(y.rowData)
         setRowData(y.rowData);
   
       });
@@ -32,12 +33,7 @@ export const GridData = () => {
     
   return (
 
-    <div
-    className={
-      "ag-theme-quartz"
-    }
-    style={{ width: '100%', height: '100%' }}
-  >
+    <div className={"ag-theme-quartz"} style={{ width: '100%', height: '100%' }}>
     <AgGridReact rowData={rowData} columnDefs={colDefs} />
   </div>
 )

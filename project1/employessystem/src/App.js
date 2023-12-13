@@ -20,7 +20,7 @@ function App() {
     <Route path='/home' element={<Home></Home>}></Route>
       <Route path='/' element={<Registration></Registration>}></Route>
      <Route path='/login' element={<LogIn></LogIn>}></Route>
-     <Route path='/griddata' element={<GridData></GridData>}></Route>
+     <Route path='/GridData' element={<GridData></GridData>}></Route>
 
     </Routes>
 

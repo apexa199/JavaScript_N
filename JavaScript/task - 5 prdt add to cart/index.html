@@ -54,25 +54,23 @@
             <a class="nav-link" href="#">Pricing</a>
           </li>
 
-          <li class="nav-item dropdown mx-4">
+          <li class="nav-item dropdown mx-2 mt-2">
 
             <select id="searchCategary">
-              <option value="start">start with</option>
-              <option value="end">end with</option>
-              <option value="content">content</option>
+              <option value="start">Search start with</option>
+              <option value="end"> Search end with</option>
+              <option value="content"> Search content</option>
             </select>
 
             <input type="text" id="searchTerm" onkeypress="searchValue(event)" />
             
           </li>
 
-          <li class="nav-item mx-4">
-         <button onclick="asc()">Low to High</button>
-          </li>
+          <li class="nav-item mx-2 mt-1">
+         <button onclick="asc()" class="btn btn-primary">Low to High</button>
+         <button onclick="dsc()" class="btn btn-primary">High to low</button>
+        </li>
 
-          <li class="nav-item">
-            <button onclick="dsc()">High to low</button>
-          </li>
         
         </ul>
       </div>

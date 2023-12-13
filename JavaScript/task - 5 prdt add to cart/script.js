@@ -67,10 +67,7 @@ const searchValue = (e) => {
   let filterData = Products.filter((v) => {
 
     let selectedCat = document.getElementById("searchCategary").value;
-
-    let searchTerm = document.getElementById("searchTerm").value;
-    
-  
+ 
 
     switch (selectedCat) {
       case "start":
@@ -84,6 +81,9 @@ const searchValue = (e) => {
       case "content":
 
         return v.title.includes(e.target.value);
+
+        
+
     }
   })
 

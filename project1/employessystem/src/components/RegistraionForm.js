@@ -133,14 +133,14 @@ export const RegistraionForm = () => {
         />
   
 
-        <Button type="submit" variant="primary" className="m-3 button1">
+        <Button type="submit" variant="primary" className="mt-3 button1">
           SIGN IN
         </Button>
       
         
-         <div className="row text-primary text-center">
+         <div className="row text-primary text-center mt-3">
               <Col >
-            <u><p className="">Forgot Password?</p></u>
+            <u><p>Forgot Password?</p></u>
             </Col>
             <Col>
             <u><p>Don't have a account? Sign Up</p></u>

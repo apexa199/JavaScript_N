@@ -73,9 +73,11 @@ export const LogInForm = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="mt-3 button1">
+        <Button variant="primary" type="submit" className="m-3 button1">
          LOGIN 
         </Button>
+
+        <u className="text-primary text-center"><p>Forgot Password?</p></u>
       </Form>
     </>
   );

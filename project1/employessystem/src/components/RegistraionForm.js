@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import authfetch from "../axioshandler/interceptor";
+import Col from "react-bootstrap/esm/Col";
 
 
 export const RegistraionForm = () => {
@@ -132,12 +133,19 @@ export const RegistraionForm = () => {
         />
   
 
-        <Button type="submit" variant="primary" className="mt-3 button1">
+        <Button type="submit" variant="primary" className="m-3 button1">
           SIGN IN
         </Button>
-        <Button type="reset" variant="danger"  className="mt-3 button1">
-          RESET
-        </Button>
+      
+        
+         <div className="row text-primary text-center">
+              <Col >
+            <u><p className="">Forgot Password?</p></u>
+            </Col>
+            <Col>
+            <u><p>Don't have a account? Sign Up</p></u>
+            </Col>
+            </div>
       </Form>
     </>
   );

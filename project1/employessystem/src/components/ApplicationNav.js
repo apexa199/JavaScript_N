@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export const ApplicationNav = () => {
   return (
-    <Navbar bg="primary" className='mb-5 fs-5'>
+    <Navbar bg="primary" className='mb-5 fs-6'>
     <Container>
 
       <Navbar.Brand href="">
@@ -17,10 +17,10 @@ export const ApplicationNav = () => {
       </Navbar.Brand>
       <Nav className="ml-auto">
      
-      <Nav.Link as={Link} to='/'>Sign Up</Nav.Link>
-        <Nav.Link as={Link} to='/login'>LogIn</Nav.Link>     
-        <Nav.Link as={Link} to='/home'>Dashboard</Nav.Link> 
-        <Nav.Link as={Link} to='/GridData'>GridData</Nav.Link>
+      <Nav.Link as={Link} to='/'>SIGN UP</Nav.Link>
+        <Nav.Link as={Link} to='/login'>LOGIN</Nav.Link>     
+        <Nav.Link as={Link} to='/home'>DASHBOARD</Nav.Link> 
+        <Nav.Link as={Link} to='/GridData'>GRIDDATA</Nav.Link>
         
         
        

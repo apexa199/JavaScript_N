@@ -67,7 +67,7 @@ export default function CustomerData() {
               </svg>
             </div>
 
-            <p className="text-center fs-3 fw-normal">Sign In</p>
+            <p className="text-center fs-4 ">Sign In</p>
 
             <Formik
               initialValues={d}
@@ -198,8 +198,15 @@ export default function CustomerData() {
                 </div>
               </Form>
             </Formik>
-            <p className="text-primary text-center">Forgot Password?</p>
-            <p className="text-primary text-center">Forgot Password?</p>
+
+            <div className="row text-primary text-center">
+              <Col >
+            <u><p className="">Forgot Password?</p></u>
+            </Col>
+            <Col>
+            <u><p>Don't have a account? Sign Up</p></u>
+            </Col>
+            </div>
           </Col>
         </Row>
       </div>

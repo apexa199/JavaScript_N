@@ -46,7 +46,7 @@ const validation = () => {
                 </svg>
               </div>
        
-            <p className="text-center fs-3 fw-normal">Log In</p>
+            <p className="text-center fs-4">Log In</p>
 
             <Formik
               initialValues={{
@@ -109,7 +109,8 @@ const validation = () => {
                   </div>
                 </Form>
             </Formik>
-            <p className="text-primary text-center">Forgot Password?</p>
+
+           <u className="text-primary text-center"><p>Forgot Password?</p></u>
           </Col>
         </Row>
       </div>

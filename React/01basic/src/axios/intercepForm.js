@@ -41,7 +41,7 @@ authfetch.interceptors.request.use((request) => {
     
 
 },(error) => {
-    if(error.response.status == 500){
+    if(error.response.status == 400){
         toast.error('${Error}', {
             position: "top-right",
             autoClose: false,

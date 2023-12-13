@@ -59,7 +59,7 @@ export const RegistraionForm = () => {
         </svg>
       </div>
 
-      <p className="text-center fs-3 fw-normal">Sign In</p>
+      <p className="text-center fs-4">Sign In</p>
 
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="">

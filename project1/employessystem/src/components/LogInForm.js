@@ -50,7 +50,7 @@ export const LogInForm = () => {
         </svg>
       </div>
 
-      <p className="text-center fs-3 fw-normal">Log In</p>
+      <p className="text-center fs-4">Log In</p>
 
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="">

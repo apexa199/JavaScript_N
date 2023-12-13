@@ -17,6 +17,7 @@ import { FormWithUseFormik } from './FormWithUseFormik';
 import { Login } from './Login';
 import { BrowserRouter } from "react-router-dom";
 import { LogInNav } from './pages/LogInNav';
+import { ToastContainer } from 'react-toastify';
 import App from './App';
 
 
@@ -26,6 +27,20 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
     <BrowserRouter>
+    <ToastContainer
+position="top-right"
+autoClose={false}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
+
+<ToastContainer />
 < App/>
 </BrowserRouter>
 

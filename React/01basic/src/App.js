@@ -5,7 +5,7 @@ import { LogInForm1 } from "./pages/LogInForm1";
 import CustomerData from "./pages/FormValinWithYp";
 import { Dashboard } from "./pages/Dashboard";
 
-
+ 
 export default function App() {
   return (
     <>

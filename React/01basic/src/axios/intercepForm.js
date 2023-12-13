@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 let d = JSON.parse(localStorage.getItem("token"));
@@ -25,13 +25,34 @@ authfetch.interceptors.request.use((request) => {
     authfetch.interceptors.response.use((response) => {
 
     if(response.status == 200){
-        
+        toast.success('${Sucessfull}', {
+            position: "top-right",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+            theme: "light",
+            });
     }
 
     return response;
     
 
 },(error) => {
+    if(error.response.status == 500){
+        toast.error('${Error}', {
+            position: "top-right",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+            theme: "light",
+            });
+    }
 
     console.log(error);
 

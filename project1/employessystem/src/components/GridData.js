@@ -12,9 +12,9 @@ export const GridData = () => {
 
     const [colDefs] = useState([
       { field: 'Title' , filter: true },
-      { field: 'First Nmae' },
-      { field: 'Last Name' },
-      { field: 'Email' },
+      { field: 'First Nmae',filter: true  },
+      { field: 'Last Name',filter: true  },
+      { field: 'Email' ,filter: true },
       
     ]);
     

@@ -37,6 +37,7 @@ export const Display1 = () => {
         <Table striped bordered hover>
         <thead>
           <tr>
+            <th>Id</th>
             <th>Title</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -47,6 +48,7 @@ export const Display1 = () => {
           {data.map((v, index) => {
             return (
               <tr>
+                <td>{v.id}</td>
                 <td>{v.title}</td>
                 <td>{v.firstName}</td>
                 <td>{v.lastName}</td>

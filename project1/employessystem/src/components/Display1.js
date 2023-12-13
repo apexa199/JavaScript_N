@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import authfetch from "../axioshandler/interceptor";
-import { MoonLoader } from 'react-spinners';
+
 
 
 export const Display1 = () => {
@@ -27,7 +27,11 @@ export const Display1 = () => {
    <>
 
       {islodded ? (
-          <MoonLoader color="blue"  islodded={islodded} size={45}/>
+          <div class="d-flex justify-content-center ">
+          <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
      
       ) : (
         <Table striped bordered hover>

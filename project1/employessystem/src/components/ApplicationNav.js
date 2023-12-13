@@ -16,9 +16,13 @@ export const ApplicationNav = () => {
 </svg>
       </Navbar.Brand>
       <Nav className="ml-auto">
-      <Nav.Link as={Link} to='/home '>Home</Nav.Link>
-      <Nav.Link as={Link} to='/'>Registration</Nav.Link>
-        <Nav.Link as={Link} to='/login'>LogIn</Nav.Link>        
+     
+      <Nav.Link as={Link} to='/'>Sign Up</Nav.Link>
+        <Nav.Link as={Link} to='/login'>LogIn</Nav.Link>     
+        <Nav.Link as={Link} to='/home'>Dashboard</Nav.Link> 
+        <Nav.Link as={Link} to='/GridData'>GridData</Nav.Link>
+        
+        
        
       </Nav>
     </Container>

@@ -40,7 +40,7 @@ pauseOnHover
 theme="light"
 />
 
-<ToastContainer />
+
 < App/>
 </BrowserRouter>
 

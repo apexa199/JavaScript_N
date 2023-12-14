@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Row, Col, Button } from "react-bootstrap";
-import authfetch from "../axios/interceptor";
+import authfetch from "../axios/intercepForm";
 
 export default function CustomerData() {
 
@@ -73,6 +73,7 @@ export default function CustomerData() {
               initialValues={d}
               validationSchema={validation}
               onSubmit={(values) => {
+                
                 authfetch
                   .post("accounts/register", values)
                   .then((y) => {
@@ -192,7 +193,7 @@ export default function CustomerData() {
                 </div>
 
                 <div className="form-group m-3">
-                  <Button type="submit" className="btn btn-primary">
+                  <Button type="submit" className="btn btn-primary btn">
                     SIGN IN
                   </Button>
                 </div>

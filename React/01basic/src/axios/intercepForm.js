@@ -24,34 +24,55 @@ authfetch.interceptors.request.use((request) => {
 
     authfetch.interceptors.response.use((response) => {
 
-    if(response.status == 200){
-        toast.success('${Sucessfull}', {
-            position: "top-right",
-            autoClose: false,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: 0,
-            theme: "light",
-            });
-    }
+    if(response.status == 200)
+    {        
 
-    return response;
+
+        if(response.config.url.includes("register"))
+        {
+            toast.success(' Registration Sucessful ', {
+                position: "top-right",
+                autoClose: 0,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: 0,
+            
+                })
+        }
+
+            else if(response.config.url.includes("authenticate"))
+            {
+                toast.success(' Login Sucessful', 
+                {
+                    position: "top-right",
+                    autoClose: 0,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 0,
+                  
+                });
+            }
+        }
+            return response;
     
-
+        
 },(error) => {
-    if(error.response.status == 400){
-        toast.error('${Error}', {
-            position: "top-right",
+
+    if (error?.response?.status == 400) 
+    {
+        toast.error(`Error`, {
+            position: "top-center",
             autoClose: false,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: 0,
-            theme: "light",
-            });
+        });
     }
 
     console.log(error);

@@ -2,7 +2,7 @@ import React from "react";
 import { Formik , Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Col, Row,Button} from "react-bootstrap";
-import authfetch from "../axios/interceptor";
+import authfetch from "../axios/intercepForm";
 import { useNavigate } from "react-router-dom";
 
 export const LogInForm1 = () => {
@@ -103,7 +103,7 @@ const validation = () => {
                   />
                 </div >
                 <div className="form-group m-3">
-                  <Button type="submit" className="btn btn-primary">
+                  <Button type="submit" className="btn btn-primary btn">
                     LOGIN IN
                   </Button>
                   </div>

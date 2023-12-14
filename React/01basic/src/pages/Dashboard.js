@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import authfetch from '../axios/interceptor';
+import authfetch from "../axios/intercepForm";
 import { Table } from 'react-bootstrap';
 
 export const Dashboard = () => {

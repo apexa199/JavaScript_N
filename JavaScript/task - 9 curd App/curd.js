@@ -73,7 +73,7 @@ const editData = (index) => {
       display();
 }
 
-const search = (e) => {
+const search = () => {
 
    let myitem = JSON.parse(localStorage.getItem("contactInfo")) ?? [];
 

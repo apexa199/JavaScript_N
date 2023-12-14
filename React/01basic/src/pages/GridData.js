@@ -10,12 +10,12 @@ export const GridData = () => {
 
   const [data, setData] = useState([]);
 
-    const [colm,setColm] = useState([
-      { field: 'id' , headerName: 'id' },
-      { field: 'title' , headerName: 'title' },
-      { field: 'firstName',headerName: 'firstName'  },
-      { field: 'lastName',headerName: 'lastName' },
-      { field: 'email' ,headerName: 'email' },
+    const [colm] = useState([
+      { field: 'id' , headerName: 'Id' },
+      { field: 'title' , headerName: 'Title' },
+      { field: 'firstName',headerName: 'First Name'  },
+      { field: 'lastName',headerName: 'Last Name' },
+      { field: 'email' ,headerName: 'Email' },
     
       
     ]);

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dis" onclick="readMoreHandle()"></div>
+
+    <script>
+       
+       let mystring = "this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript.this is mu jasvascript."
+
+        let isreadMore = true;
+
+        const readMoreHandle = () => {
+
+            if(isreadMore){
+
+               document.getElementById("dis").innerHTML = mystring.slice(0,15).concat(" ...readMore")
+            }
+            else{
+                document.getElementById("dis").innerHTML = mystring.concat(" ...readless");
+            }
+            isreadMore = !isreadMore
+        }
+       readMoreHandle()
+    
+    </script>
+
+
+
+</body>
+
+</html>

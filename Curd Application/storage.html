@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="hidden" id="index" value="-1">
+    <input type="text" id="name" />
+    <input type="button" value="save" onclick="saveData()" />
+    <button onclick="clearItemFromToLocal()">Clear</button>
+
+    <ul id="display"></ul>
+
+    <script>
+
+        const saveData = () => {
+
+            let indexToEdit = document.getElementById("index").value;
+
+            let item = JSON.parse(localStorage.getItem("storeItem")) ?? [];
+
+            let obj = {
+                "name" : document.getElementById("name").value,
+            }
+
+            if(indexToEdit == "-1")
+            {
+                item.push(obj);
+            }
+            else
+            {
+                item[indexToEdit] = obj;
+            }
+
+            document.getElementById("index").value = "-1";
+
+           localStorage.setItem("storeItem", JSON.stringify(item));
+
+            display()
+        }
+
+        const display = () => {
+
+            let item = JSON.parse(localStorage.getItem("storeItem")) ?? [];
+
+            displayInfo(item);
+
+        }
+        const displayInfo = (item) => {
+
+            let a = item.map((value, index) => {
+
+                return (`<li>${value.name} <button onclick="editData(${index})">Edit</button> <button onclick="deleteData(${index})" >Delete</button></li>`)
+            })
+            document.getElementById("display").innerHTML = a.join(" ");
+        }
+
+        const clearItemFromToLocal = () => {
+
+            localStorage.clear();               //it's remove all loclastorage item 
+            localStorage.removeItem("storeItem");    //it's remove particular item 
+        }
+
+        const deleteData = (index) => {
+
+            let item = JSON.parse(localStorage.getItem("storeItem")) ?? [];
+
+            item.splice(index, 1);
+
+            localStorage.setItem("storeItem", JSON.stringify(item));
+
+            display();
+        }
+
+
+        const editData = (index) => {
+
+            let item = JSON.parse(localStorage.getItem("storeItem")) ?? [];
+
+            document.getElementById("name").value = item[index].name;
+            document.getElementById("index").value = index;
+
+            display();
+        }
+        display()
+
+    </script>
+</body>
+
+</html>

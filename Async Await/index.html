@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="content"></div>
+    <script>
+
+        async function display() {
+
+            let display = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+            let Response = await display.json();
+
+            let user = await fetch("https://jsonplaceholder.typicode.com/users");
+
+            let userResponse = await user.json();
+
+            let userIds = Response.map((value) => {
+
+                let useremail = userResponse.find(y => y.id == value.userId)
+
+                return { ...value, "emailId": useremail.email };
+            })
+            
+            document.getElementById("content").innerHTML = JSON.stringify(userIds);
+        }
+        display()
+
+
+    </script>
+</body>
+
+</html>

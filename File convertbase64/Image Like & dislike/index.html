@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" onchange="fileUpload(event)" />
+
+
+    <div id="display"></div>
+    <script>
+
+        const fileUpload = (e) => {
+
+            const file = e.target.files[0];
+
+            const base64 = convertBase64(file).then(y => {
+
+                let p = JSON.parse(localStorage.getItem("images")) || [];
+
+                let myobject = {
+
+                    image: y,
+                    Id: p.length + 1,
+                    l: 0,
+                    d: 0,
+                }
+
+                p.push(myobject);
+
+                localStorage.setItem("images", JSON.stringify(p));
+
+                displayData();
+
+            }).then(y => {
+
+                console.log(y);
+            });
+
+        }
+        const convertBase64 = (file) => {
+
+            return new Promise((resolve, reject) => {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(file);
+                fileReader.onload = () => {
+                    resolve(fileReader.result);
+                };
+                fileReader.onerror = (error) => {
+                    reject(error);
+                };
+
+            });
+        }
+
+        const displayData = () => {
+
+            let p = JSON.parse(localStorage.getItem("images")) || [];
+
+            let a = p.map((v) => {
+
+                return (`<div><img src='${v.image}' width = "500px" height="300px"/>${v.Id}
+                  ${v.l} - <button onclick ="manageLike('${v.Id}')">Like</button> ${v.d} - <button oncklick = "manageDisLike('${v.Id}')">Dislike</button>
+                </div>`)
+            })
+            document.getElementById("display").innerHTML = a.join("");
+        }
+
+        manageLike = (id) => {
+
+            let p = JSON.parse(localStorage.getItem("images")) || [];
+
+            let image = p.find((value) => {
+
+                return value.Id == id;
+            })
+            image.l = image.l + 1;
+
+            localStorage.setItem("images", JSON.stringify(p));
+
+            displayData();
+        }
+
+        manageDisLike = (id) => {
+
+            let p = JSON.parse(localStorage.getItem("images")) || [];
+
+            let image = p.find((value) => {
+
+                return value.Id == id;
+            })
+            image.d = image.d + 1;
+
+            localStorage.setItem("images", JSON.stringify(p));
+
+            displayData();
+        }
+
+        displayData();
+
+    </script>
+</body>
+
+</html>

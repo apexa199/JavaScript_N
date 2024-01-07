@@ -92,28 +92,19 @@ const searchValue = (e) => {
 
 const asc = () => {
 
-  const ascending = Products.sort((a , b) =>{
+  const ascending = Products.sort((a , b) =>
 
-    if(a.price > b.price){
-      return 1
-    }
-    else{
-      return -1
-    }
-  })
+    a.price - b.price
+  )
   display(ascending)
 }
 
 const dsc = () => {
 
-  const desending = Products.sort((a ,b) => { 
+  const desending = Products.sort((a ,b) => 
 
-    if(a.price < b.price){
-      return 1
-    }
-    else{
-      return -1
-    }
-  })
+     b.price - a.price
+  )
+
   display(desending)
 }

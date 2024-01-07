@@ -66,10 +66,10 @@ const searchValue = (e) => {
 
   let filterData = Products.filter((v) => {
 
-    let selectedCat = document.getElementById("searchCategary").value;
- 
+    let selectedCat = document.getElementById("searchCategary").value; 
 
     switch (selectedCat) {
+    
       case "start":
 
         return v.title.startsWith(e.target.value);
@@ -92,28 +92,18 @@ const searchValue = (e) => {
 
 const asc = () => {
 
-  const ascending = Products.sort((a , b) =>{
+  const ascending = Products.sort((a , b) => 
+  
+  a.price - b.price)
 
-    if(a.price > b.price){
-      return 1
-    }
-    else{
-      return -1
-    }
-  })
   display(ascending)
 }
 
 const dsc = () => {
 
-  const desending = Products.sort((a ,b) => { 
+  const desending = Products.sort((a ,b) => 
 
-    if(a.price < b.price){
-      return 1
-    }
-    else{
-      return -1
-    }
-  })
+     b.price -  a.price
+)
   display(desending)
 }

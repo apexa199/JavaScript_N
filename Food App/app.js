@@ -142,30 +142,19 @@ filterData = (category) => {
 
 ascending = () => {
 
-  const ascending = menu.sort((a, b) => {
-
-    if (a.price > b.price) {
-      return 1
-    }
-    else {
-      return -1;
-    }
-  })
+  const ascending = menu.sort((a, b) =>
+  
+  a.price - b.price)
 
   display(ascending);
 }
 
 dscending = () => {
 
-  const dscending = menu.sort((a, b) => {
+  const dscending = menu.sort((a, b) => 
+  
+  b.price - a.price)
 
-    if (a.price < b.price) {
-      return 1
-    }
-    else {
-      return -1
-    }
-  })
   display(dscending);
 }
 
@@ -219,7 +208,7 @@ const displayCartItems = (carts) => {
 
   document.getElementById("cartitems").innerHTML = p.join("");
 
-  //
+
 }
 
 const inc = (index) =>
@@ -236,10 +225,3 @@ const dec = (index) =>
   displayCartItems(carts);
 } 
 
-
-const p = ()=>{
-
-//total logic
-//div
-
-}

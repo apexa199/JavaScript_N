@@ -64,7 +64,8 @@
             let a = p.map((v) => {
 
                 return (`<div><img src='${v.image}' width = "500px" height="300px"/>${v.Id}
-                  ${v.l} - <button onclick ="manageLike('${v.Id}')">Like</button> ${v.d} - <button oncklick = "manageDisLike('${v.Id}')">Dislike</button>
+                    ${v.l} - <button onclick ="manageLike('${v.Id}')">Like</button>
+                    ${v.d} - <button oncklick = "manageDisLike('${v.Id}')">Dislike</button>
                 </div>`)
             })
             document.getElementById("display").innerHTML = a.join("");

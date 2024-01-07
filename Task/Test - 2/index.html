@@ -85,29 +85,19 @@
 
             ascending = () => {
 
-                let a = products.sort((a, b) => {
+                let a = products.sort((a, b) => 
 
-                    if (a.price > b.price) {
-                        return 1
-                    }
-                    else {
-                        return -1
-                    }
-                })
+                    a.price - b.price
+             )
                 displayData(a);
             }
 
             decending = () => {
 
-                let b = products.sort((a, b) => {
+                let b = products.sort((a, b) => 
 
-                    if (a.price > b.price) {
-                        return -1
-                    }
-                    else {
-                        return 1
-                    }
-                })
+                    a.price > b.price - a.price)
+            
                 displayData(b);
             }
         }

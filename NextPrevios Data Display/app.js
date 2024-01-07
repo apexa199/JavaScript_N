@@ -38,13 +38,13 @@ const reviews = [
 
 // select items
 
-let reviewsData = [];
+
 
 let index = 0;
 
 const display = () => {
 
-    let displayHtml = reviews.map((v) => {
+    let displayHtml = reviews.map((v,index) => {
 
         return`  <article class="review">
         <div class="img-container">

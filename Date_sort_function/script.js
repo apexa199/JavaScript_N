@@ -52,16 +52,10 @@ const employee = [
 
     asc = () => {
 
-        let asecending = employee.sort((a,b) => {
+        let asecending = employee.sort((a,b) => 
 
-            if(a.Joiningdate >b.Joiningdate){
-
-                return 1
-            }
-            else{
-                return -1
-            }
-        })
+            a.Joiningdate - b.Joiningdate)
+            
         display(asecending)
     }
     display()
